@@ -80,7 +80,7 @@ const Profile: React.FC = () => {
                 <Users size={20} className="mx-auto" />
               </div>
               <p className="text-lg font-bold text-white">{userData.stats.collaborations}</p>
-              <p className="text-xs text-spotify-text-gray">Collaborations</p>
+              <p className="text-xs text-spotify-text-gray">Collabs</p>
             </div>
             <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in">
               <div className="text-spotify-green mb-1">
