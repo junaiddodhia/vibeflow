@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Plus, Bell } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -28,7 +27,7 @@ const recentPlaylists = [
     title: 'Workout Mix',
     totalSongs: 18,
     collaborators: 2,
-    coverImage: 'https://images.unsplash.com/photo-1526727942643-7f080ebcbd7d?auto=format&fit=crop&q=80&w=300&h=300'
+    coverImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=300&h=300'
   }
 ];
 
@@ -69,7 +68,7 @@ const Home: React.FC = () => {
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-white">VibeFlow</h1>
           <Link to="/notifications">
-            <button className="p-2 rounded-full bg-vibe-card hover:bg-vibe-card-hover transition-colors">
+            <button className="p-2 rounded-full bg-spotify-gray hover:bg-spotify-gray-light transition-colors">
               <Bell size={20} className="text-white" />
             </button>
           </Link>
@@ -77,18 +76,18 @@ const Home: React.FC = () => {
 
         <SearchBar onSearch={handleSearch} placeholder="Search songs or playlists..." />
 
-        <div className="mb-8">
+        <div className="mb-8 mt-6">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold text-white">Your Playlists</h2>
             <Link to="/create-playlist">
-              <button className="vibe-button-primary animate-pulse-soft">
+              <button className="vibe-button-primary">
                 <Plus size={18} />
                 <span>Create</span>
               </button>
             </Link>
           </div>
           
-          <div className="space-y-3">
+          <div className="grid grid-cols-1 gap-3">
             {recentPlaylists.map((playlist) => (
               <PlaylistCard
                 key={playlist.id}

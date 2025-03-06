@@ -46,15 +46,15 @@ const Profile: React.FC = () => {
       <div className="pt-8">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-white">Profile</h1>
-          <button className="p-2 rounded-full bg-vibe-card hover:bg-vibe-card-hover transition-colors">
+          <button className="p-2 rounded-full bg-spotify-gray hover:bg-spotify-gray-light transition-colors">
             <Settings size={20} className="text-white" />
           </button>
         </div>
 
         {/* Profile Info */}
-        <div className="glass-card p-6 mb-8 animate-fade-in">
+        <div className="bg-spotify-gray p-6 rounded-lg mb-8 animate-fade-in">
           <div className="flex items-center">
-            <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-vibe-blue mr-4">
+            <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-spotify-green mr-4">
               <img 
                 src={userData.profilePicture} 
                 alt={userData.username} 
@@ -63,31 +63,31 @@ const Profile: React.FC = () => {
             </div>
             <div>
               <h2 className="text-xl font-bold text-white">{userData.username}</h2>
-              <p className="text-gray-400">{userData.fullName}</p>
+              <p className="text-spotify-text-gray">{userData.fullName}</p>
             </div>
           </div>
 
           <div className="grid grid-cols-3 gap-4 mt-6">
-            <div className="glass-card p-3 text-center animate-fade-in">
-              <div className="text-vibe-blue mb-1">
+            <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in">
+              <div className="text-spotify-green mb-1">
                 <Music size={20} className="mx-auto" />
               </div>
               <p className="text-lg font-bold text-white">{userData.stats.playlists}</p>
-              <p className="text-xs text-gray-400">Playlists</p>
+              <p className="text-xs text-spotify-text-gray">Playlists</p>
             </div>
-            <div className="glass-card p-3 text-center animate-fade-in">
-              <div className="text-vibe-green mb-1">
+            <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in">
+              <div className="text-spotify-green mb-1">
                 <Users size={20} className="mx-auto" />
               </div>
               <p className="text-lg font-bold text-white">{userData.stats.collaborations}</p>
-              <p className="text-xs text-gray-400">Collaborations</p>
+              <p className="text-xs text-spotify-text-gray">Collaborations</p>
             </div>
-            <div className="glass-card p-3 text-center animate-fade-in">
-              <div className="text-vibe-purple mb-1">
+            <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in">
+              <div className="text-spotify-green mb-1">
                 <Music size={20} className="mx-auto" />
               </div>
               <p className="text-lg font-bold text-white">{userData.stats.approvedRequests}</p>
-              <p className="text-xs text-gray-400">Approved Songs</p>
+              <p className="text-xs text-spotify-text-gray">Approved Songs</p>
             </div>
           </div>
         </div>
