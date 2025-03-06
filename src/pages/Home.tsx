@@ -34,21 +34,21 @@ const recentPlaylists = [
 
 const recentActivity = [
   {
-    type: 'request',
+    type: 'request' as const,
     playlistName: 'Weekend Vibes',
     songTitle: 'Starlight',
     username: 'Alex',
     time: '2 hours ago'
   },
   {
-    type: 'approval',
+    type: 'approval' as const,
     playlistName: 'Chill & Study',
     songTitle: 'Ocean Waves',
     username: 'Maya',
     time: '5 hours ago'
   },
   {
-    type: 'comment',
+    type: 'comment' as const,
     playlistName: 'Workout Mix',
     songTitle: 'Power Up',
     username: 'Jordan',
