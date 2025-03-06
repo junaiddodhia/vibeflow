@@ -28,11 +28,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
       <div className="relative">
         <Search
           size={18}
-          className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+          className="absolute left-3 top-1/2 transform -translate-y-1/2 text-spotify-text-gray"
         />
         <input
           type="text"
-          className="vibe-input pl-10 pr-10"
+          className="bg-spotify-gray-light text-white w-full py-2 pl-10 pr-10 rounded-full focus:outline-none focus:ring-1 focus:ring-spotify-green/50"
           placeholder={placeholder}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -41,7 +41,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
           <button
             type="button"
             onClick={clearSearch}
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-spotify-text-gray"
           >
             <X size={18} />
           </button>

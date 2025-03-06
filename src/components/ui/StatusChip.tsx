@@ -15,13 +15,13 @@ const StatusChip: React.FC<StatusChipProps> = ({ status }) => {
         return {
           label: 'Approved',
           icon: Check,
-          className: 'bg-vibe-green/20 text-vibe-green border-vibe-green/30'
+          className: 'bg-spotify-green/20 text-spotify-green border-spotify-green/30'
         };
       case 'pending':
         return {
           label: 'Pending',
           icon: Clock,
-          className: 'bg-vibe-blue/20 text-vibe-blue border-vibe-blue/30'
+          className: 'bg-blue-500/20 text-blue-400 border-blue-500/30'
         };
       case 'rejected':
         return {
@@ -35,8 +35,8 @@ const StatusChip: React.FC<StatusChipProps> = ({ status }) => {
   const config = getStatusConfig();
 
   return (
-    <div className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium border ${config.className}`}>
-      <config.icon size={12} className="mr-1" />
+    <div className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${config.className}`}>
+      <config.icon size={10} className="mr-1" />
       {config.label}
     </div>
   );

@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -84,8 +85,8 @@
   }
 
   body {
-    @apply bg-vibe-dark text-foreground antialiased overflow-x-hidden;
-    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    @apply bg-spotify-black text-foreground antialiased overflow-x-hidden;
+    font-family: 'Montserrat', sans-serif;
   }
 
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -102,19 +103,19 @@
 
 @layer components {
   .glass-card {
-    @apply bg-vibe-card/80 backdrop-blur-md border border-vibe-border rounded-2xl;
+    @apply bg-spotify-gray/90 backdrop-blur-md border border-spotify-gray-light rounded-xl;
   }
   
   .vibe-button {
-    @apply px-4 py-2 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center gap-2;
+    @apply px-4 py-2 rounded-full font-medium transition-all duration-300 flex items-center justify-center gap-2;
   }
   
   .vibe-button-primary {
-    @apply vibe-button bg-gradient-to-r from-vibe-blue to-vibe-purple text-white hover:shadow-lg hover:shadow-vibe-blue/20;
+    @apply vibe-button bg-spotify-green text-black hover:bg-spotify-green-dark;
   }
   
   .vibe-button-secondary {
-    @apply vibe-button bg-vibe-card border border-vibe-border hover:bg-vibe-card-hover;
+    @apply vibe-button bg-spotify-gray-light border border-spotify-gray-lighter hover:bg-spotify-gray-lighter;
   }
   
   .vibe-tab {
@@ -122,14 +123,14 @@
   }
   
   .vibe-tab-active {
-    @apply border-vibe-blue text-white;
+    @apply border-spotify-green text-white;
   }
   
   .vibe-card {
-    @apply glass-card p-4 transition-all duration-300 hover:bg-vibe-card-hover;
+    @apply glass-card p-4 transition-all duration-300 hover:bg-spotify-gray-light;
   }
   
   .vibe-input {
-    @apply bg-vibe-card border border-vibe-border rounded-xl px-4 py-2 w-full focus:outline-none focus:ring-1 focus:ring-vibe-blue/50;
+    @apply bg-spotify-gray-light border border-spotify-gray-lighter rounded-md px-4 py-2 w-full focus:outline-none focus:ring-1 focus:ring-spotify-green/50;
   }
 }

@@ -33,7 +33,7 @@ const CreatePlaylist: React.FC = () => {
       <div className="pt-4">
         <div className="flex items-center mb-6">
           <Link to="/">
-            <button className="p-2 rounded-full bg-vibe-card hover:bg-vibe-card-hover transition-colors mr-3">
+            <button className="p-2 rounded-full bg-spotify-gray-light hover:bg-spotify-gray-lighter transition-colors mr-3">
               <ArrowLeft size={20} className="text-white" />
             </button>
           </Link>
@@ -44,13 +44,13 @@ const CreatePlaylist: React.FC = () => {
           {/* Cover Image Upload */}
           <div className="mb-6">
             <div 
-              className="w-48 h-48 mx-auto relative rounded-2xl overflow-hidden bg-vibe-card border-2 border-dashed border-vibe-border flex items-center justify-center"
+              className="w-48 h-48 mx-auto relative rounded-xl overflow-hidden bg-spotify-gray-light border-2 border-dashed border-spotify-gray-lighter flex items-center justify-center"
               style={{ backgroundSize: 'cover', backgroundPosition: 'center', backgroundImage: coverImage ? `url(${coverImage})` : 'none' }}
             >
               {!coverImage && (
                 <div className="text-center p-4">
-                  <Music size={40} className="mx-auto mb-2 text-gray-400" />
-                  <p className="text-sm text-gray-400">Upload Playlist Cover</p>
+                  <Music size={40} className="mx-auto mb-2 text-spotify-text-gray" />
+                  <p className="text-sm text-spotify-text-gray">Upload Playlist Cover</p>
                 </div>
               )}
               
@@ -63,8 +63,8 @@ const CreatePlaylist: React.FC = () => {
               
               {coverImage && (
                 <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
-                  <div className="p-2 rounded-full bg-white/20">
-                    <Upload size={24} className="text-white" />
+                  <div className="p-2 rounded-full bg-spotify-green/20">
+                    <Upload size={24} className="text-spotify-green" />
                   </div>
                 </div>
               )}
@@ -73,7 +73,7 @@ const CreatePlaylist: React.FC = () => {
 
           {/* Playlist Name */}
           <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-200 mb-2">
+            <label className="block text-sm font-medium text-spotify-text-gray mb-2">
               Playlist Name
             </label>
             <input
@@ -88,7 +88,7 @@ const CreatePlaylist: React.FC = () => {
 
           {/* Description */}
           <div className="mb-6">
-            <label className="block text-sm font-medium text-gray-200 mb-2">
+            <label className="block text-sm font-medium text-spotify-text-gray mb-2">
               Description
             </label>
             <textarea
@@ -102,10 +102,10 @@ const CreatePlaylist: React.FC = () => {
           {/* Create Button */}
           <button
             type="submit"
-            className="vibe-button-primary w-full"
+            className="bg-spotify-green hover:bg-spotify-green-dark text-black font-bold py-3 px-6 rounded-full w-full transition-colors"
             disabled={!playlistName.trim()}
           >
-            Create Playlist
+            CREATE
           </button>
         </form>
       </div>

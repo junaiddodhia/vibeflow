@@ -24,15 +24,15 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       case 'request':
         return {
           icon: Clock,
-          color: 'text-vibe-blue',
-          bgColor: 'bg-vibe-blue/10',
+          color: 'text-blue-400',
+          bgColor: 'bg-blue-400/10',
           title: `${username} requested to add a song`
         };
       case 'approval':
         return {
           icon: Check,
-          color: 'text-vibe-green',
-          bgColor: 'bg-vibe-green/10',
+          color: 'text-spotify-green',
+          bgColor: 'bg-spotify-green/10',
           title: `${username} approved your song request`
         };
       case 'rejection':
@@ -45,8 +45,8 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       case 'comment':
         return {
           icon: MessageCircle,
-          color: 'text-vibe-purple',
-          bgColor: 'bg-vibe-purple/10',
+          color: 'text-purple-400',
+          bgColor: 'bg-purple-400/10',
           title: `${username} commented on your request`
         };
     }
@@ -55,22 +55,22 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   const config = getTypeConfig();
 
   return (
-    <div className="vibe-card mb-3 animate-fade-in">
+    <div className="p-3 bg-spotify-gray hover:bg-spotify-gray-light rounded-md mb-3 animate-fade-in transition-all duration-200">
       <div className="flex items-start">
         <div className={`p-2 rounded-full ${config.bgColor} mr-3`}>
-          <config.icon className={config.color} size={18} />
+          <config.icon className={config.color} size={16} />
         </div>
         <div className="flex-1">
           <p className="text-sm font-medium text-white">{config.title}</p>
-          <p className="text-xs text-gray-400 mt-1">
+          <p className="text-xs text-spotify-text-gray mt-1">
             {songTitle} • {playlistName}
           </p>
           {message && (
-            <p className="text-xs text-gray-300 mt-2 p-2 bg-white/5 rounded-lg">
+            <p className="text-xs text-gray-300 mt-2 p-2 bg-spotify-gray-light rounded-md">
               "{message}"
             </p>
           )}
-          <p className="text-xs text-gray-500 mt-2">{time}</p>
+          <p className="text-xs text-spotify-text-gray opacity-70 mt-2">{time}</p>
         </div>
       </div>
     </div>

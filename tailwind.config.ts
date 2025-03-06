@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -75,6 +74,18 @@ export default {
 					card: '#0F2531',
 					'card-hover': '#16303D',
 					border: '#1A3040'
+				},
+				// Spotify colors
+				spotify: {
+					green: '#1DB954',
+					'green-dark': '#1AA34A',
+					black: '#191414',
+					'gray-dark': '#121212',
+					gray: '#181818',
+					'gray-light': '#282828',
+					'gray-lighter': '#3E3E3E',
+					'text-gray': '#B3B3B3',
+					white: '#FFFFFF',
 				}
 			},
 			borderRadius: {

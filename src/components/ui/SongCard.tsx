@@ -21,33 +21,35 @@ const SongCard: React.FC<SongCardProps> = ({
   onPlay
 }) => {
   return (
-    <div className="vibe-card flex items-center gap-3 mb-3 animate-fade-in">
-      <div className="w-12 h-12 relative rounded-lg overflow-hidden">
-        <img
-          src={coverImage}
-          alt={title}
-          className="w-full h-full object-cover"
-          loading="lazy"
-        />
-        <div
-          className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer"
-          onClick={onPlay}
-        >
-          <Play size={16} fill="white" className="text-white" />
+    <div className="p-3 rounded-md bg-spotify-gray hover:bg-spotify-gray-light transition-all duration-200 mb-2 animate-fade-in">
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 relative rounded-md overflow-hidden shadow-md">
+          <img
+            src={coverImage}
+            alt={title}
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+          <div
+            className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity cursor-pointer"
+            onClick={onPlay}
+          >
+            <Play size={16} fill="white" className="text-white" />
+          </div>
         </div>
-      </div>
-      <div className="flex-1">
-        <h3 className="font-medium text-white text-sm">{title}</h3>
-        <p className="text-xs text-gray-400">{artist}</p>
-        {addedBy && (
-          <p className="text-xs text-gray-500 mt-1">Added by {addedBy}</p>
-        )}
-      </div>
-      <div className="flex items-center gap-2">
-        {status && <StatusChip status={status} />}
-        <button className="p-1 rounded-full hover:bg-white/10">
-          <MoreHorizontal size={18} className="text-gray-400" />
-        </button>
+        <div className="flex-1 min-w-0">
+          <h3 className="font-medium text-white text-sm truncate">{title}</h3>
+          <p className="text-xs text-spotify-text-gray truncate">{artist}</p>
+          {addedBy && (
+            <p className="text-xs text-spotify-text-gray opacity-70 mt-0.5 truncate">Added by {addedBy}</p>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          {status && <StatusChip status={status} />}
+          <button className="p-1 rounded-full hover:bg-spotify-gray-lighter">
+            <MoreHorizontal size={18} className="text-spotify-text-gray" />
+          </button>
+        </div>
       </div>
     </div>
   );
