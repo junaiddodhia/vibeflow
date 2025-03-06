@@ -2,8 +2,10 @@
 import React from 'react';
 import { Check, X, MessageCircle, Clock } from 'lucide-react';
 
+type NotificationType = 'request' | 'approval' | 'rejection' | 'comment';
+
 interface NotificationCardProps {
-  type: 'request' | 'approval' | 'rejection' | 'comment';
+  type: NotificationType;
   playlistName: string;
   songTitle: string;
   username: string;
