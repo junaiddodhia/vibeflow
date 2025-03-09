@@ -43,60 +43,60 @@ const userPlaylists = [
 const Profile: React.FC = () => {
   return (
     <PageContainer>
-      <div className="pt-8">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold text-white">Profile</h1>
+      <div className="pt-8 md:pt-12">
+        <div className="flex justify-between items-center mb-6 md:mb-8">
+          <h1 className="text-2xl font-bold text-white md:text-3xl">Profile</h1>
           <button className="p-2 rounded-full bg-spotify-gray hover:bg-spotify-gray-light transition-colors">
-            <Settings size={20} className="text-white" />
+            <Settings size={20} className="text-white md:size-22" />
           </button>
         </div>
 
         {/* Profile Info */}
-        <div className="bg-spotify-gray p-6 rounded-lg mb-8 animate-fade-in">
-          <div className="flex items-center">
-            <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-spotify-green mr-4">
+        <div className="bg-spotify-gray p-6 rounded-lg mb-8 animate-fade-in md:p-8 md:rounded-xl">
+          <div className="flex items-center md:items-start">
+            <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-spotify-green mr-4 md:w-28 md:h-28 md:mr-6">
               <img 
                 src={userData.profilePicture} 
                 alt={userData.username} 
                 className="w-full h-full object-cover"
               />
             </div>
-            <div>
-              <h2 className="text-xl font-bold text-white">{userData.username}</h2>
-              <p className="text-spotify-text-gray">{userData.fullName}</p>
+            <div className="md:mt-2">
+              <h2 className="text-xl font-bold text-white md:text-2xl">{userData.username}</h2>
+              <p className="text-spotify-text-gray md:text-lg">{userData.fullName}</p>
             </div>
           </div>
 
-          <div className="grid grid-cols-3 gap-4 mt-6">
-            <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in">
-              <div className="text-spotify-green mb-1">
-                <Music size={20} className="mx-auto" />
+          <div className="grid grid-cols-3 gap-4 mt-6 md:mt-8 md:gap-6">
+            <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in md:p-5 md:rounded-xl">
+              <div className="text-spotify-green mb-1 md:mb-2">
+                <Music size={20} className="mx-auto md:size-24" />
               </div>
-              <p className="text-lg font-bold text-white">{userData.stats.playlists}</p>
-              <p className="text-xs text-spotify-text-gray">Playlists</p>
+              <p className="text-lg font-bold text-white md:text-xl">{userData.stats.playlists}</p>
+              <p className="text-xs text-spotify-text-gray md:text-sm">Playlists</p>
             </div>
-            <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in">
-              <div className="text-spotify-green mb-1">
-                <Users size={20} className="mx-auto" />
+            <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in md:p-5 md:rounded-xl">
+              <div className="text-spotify-green mb-1 md:mb-2">
+                <Users size={20} className="mx-auto md:size-24" />
               </div>
-              <p className="text-lg font-bold text-white">{userData.stats.collaborations}</p>
-              <p className="text-xs text-spotify-text-gray">Collabs</p>
+              <p className="text-lg font-bold text-white md:text-xl">{userData.stats.collaborations}</p>
+              <p className="text-xs text-spotify-text-gray md:text-sm">Collabs</p>
             </div>
-            <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in">
-              <div className="text-spotify-green mb-1">
-                <Music size={20} className="mx-auto" />
+            <div className="bg-spotify-gray-light p-3 rounded-lg text-center animate-fade-in md:p-5 md:rounded-xl">
+              <div className="text-spotify-green mb-1 md:mb-2">
+                <Music size={20} className="mx-auto md:size-24" />
               </div>
-              <p className="text-lg font-bold text-white">{userData.stats.approvedRequests}</p>
-              <p className="text-xs text-spotify-text-gray">Approved Songs</p>
+              <p className="text-lg font-bold text-white md:text-xl">{userData.stats.approvedRequests}</p>
+              <p className="text-xs text-spotify-text-gray md:text-sm">Approved Songs</p>
             </div>
           </div>
         </div>
 
         {/* User Playlists */}
         <div>
-          <h2 className="text-lg font-semibold text-white mb-4">Your Playlists</h2>
+          <h2 className="text-lg font-semibold text-white mb-4 md:text-xl md:mb-6">Your Playlists</h2>
           
-          <div className="space-y-3">
+          <div className="space-y-3 md:space-y-4 md:grid md:grid-cols-1 lg:grid-cols-2 md:gap-4">
             {userPlaylists.map((playlist) => (
               <PlaylistCard
                 key={playlist.id}
