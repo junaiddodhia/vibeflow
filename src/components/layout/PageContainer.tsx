@@ -8,7 +8,7 @@ interface PageContainerProps {
 
 const PageContainer: React.FC<PageContainerProps> = ({ children, className = '' }) => {
   return (
-    <div className={`min-h-screen pb-20 w-full mx-auto px-4 bg-spotify-black md:px-8 lg:px-12 xl:px-24 ${className}`}>
+    <div className={`min-h-screen pb-20 w-full mx-auto px-4 bg-[#121212] md:px-8 lg:px-12 xl:px-24 ${className}`}>
       <div className="mx-auto">
         {children}
       </div>

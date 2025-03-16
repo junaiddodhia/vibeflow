@@ -85,7 +85,7 @@
   }
 
   body {
-    @apply bg-spotify-black text-foreground antialiased overflow-x-hidden;
+    @apply bg-[#121212] text-foreground antialiased overflow-x-hidden;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -103,7 +103,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-spotify-gray/90 backdrop-blur-md border border-spotify-gray-light rounded-xl;
+    @apply bg-[#282828]/90 backdrop-blur-md border border-[#333333] rounded-xl;
   }
   
   .vibe-button {
@@ -111,11 +111,11 @@
   }
   
   .vibe-button-primary {
-    @apply vibe-button bg-spotify-green text-black hover:bg-spotify-green-dark;
+    @apply vibe-button bg-[#1DB954] text-black hover:bg-[#1AA34A];
   }
   
   .vibe-button-secondary {
-    @apply vibe-button bg-spotify-gray-light border border-spotify-gray-lighter hover:bg-spotify-gray-lighter;
+    @apply vibe-button bg-[#333333] border border-[#3E3E3E] hover:bg-[#3E3E3E];
   }
   
   .vibe-tab {
@@ -123,14 +123,14 @@
   }
   
   .vibe-tab-active {
-    @apply border-spotify-green text-white;
+    @apply border-[#1DB954] text-white;
   }
   
   .vibe-card {
-    @apply glass-card p-4 transition-all duration-300 hover:bg-spotify-gray-light;
+    @apply glass-card p-4 transition-all duration-300 hover:bg-[#333333];
   }
   
   .vibe-input {
-    @apply bg-spotify-gray-light border border-spotify-gray-lighter rounded-md px-4 py-2 w-full focus:outline-none focus:ring-1 focus:ring-spotify-green/50;
+    @apply bg-[#333333] border border-[#3E3E3E] rounded-md px-4 py-2 w-full focus:outline-none focus:ring-1 focus:ring-[#1DB954]/50;
   }
 }
