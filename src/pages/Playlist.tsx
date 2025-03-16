@@ -109,54 +109,58 @@ const Playlist: React.FC = () => {
   };
 
   return (
-    <PageContainer className="pb-24">
-      <div className="relative">
+    <PageContainer>
+      <div className="relative max-w-4xl mx-auto">
         {/* Header */}
-        <div className="sticky top-0 z-10 bg-vibe-dark/80 backdrop-blur-xl pt-4 pb-2">
+        <div className="sticky top-0 z-10 bg-spotify-black/90 backdrop-blur-xl pt-4 pb-2">
           <div className="flex justify-between items-center mb-4">
-            <Link to="/">
-              <button className="p-2 rounded-full bg-vibe-card hover:bg-vibe-card-hover transition-colors">
+            <Link to="/" aria-label="Back to home">
+              <button className="p-2 rounded-full bg-spotify-gray hover:bg-spotify-gray-light transition-colors">
                 <ArrowLeft size={20} className="text-white" />
               </button>
             </Link>
-            <button className="p-2 rounded-full bg-vibe-card hover:bg-vibe-card-hover transition-colors">
+            <button className="p-2 rounded-full bg-spotify-gray hover:bg-spotify-gray-light transition-colors" aria-label="More options">
               <MoreVertical size={20} className="text-white" />
             </button>
           </div>
         </div>
 
-        {/* Playlist Info */}
-        <div className="mb-6 animate-fade-in">
-          <div className="relative w-48 h-48 mx-auto mb-4 rounded-2xl overflow-hidden shadow-xl">
+        {/* Playlist Info - Enhanced for responsiveness */}
+        <div className="mb-8 animate-fade-in md:flex md:items-center md:gap-8">
+          <div className="relative w-48 h-48 mx-auto mb-4 rounded-lg overflow-hidden shadow-2xl md:mx-0 md:w-56 md:h-56 lg:w-64 lg:h-64">
             <img 
               src={playlistData.coverImage} 
               alt={playlistData.title} 
               className="w-full h-full object-cover"
             />
           </div>
-          <h1 className="text-2xl font-bold text-white text-center">{playlistData.title}</h1>
-          <p className="text-gray-400 text-center mt-1 px-8">{playlistData.description}</p>
           
-          <div className="flex justify-center items-center gap-3 mt-4">
-            <button 
-              className="vibe-button-primary"
-              onClick={() => setIsRequestModalOpen(true)}
-            >
-              <Plus size={18} />
-              <span>Add Song</span>
-            </button>
-            <button className="vibe-button-secondary">
-              <Share2 size={18} />
-              <span>Share</span>
-            </button>
+          <div className="md:flex-1">
+            <h1 className="text-2xl font-bold text-white text-center md:text-left md:text-3xl lg:text-4xl">{playlistData.title}</h1>
+            <p className="text-gray-400 text-center mt-2 md:text-left md:mt-3 md:text-lg">{playlistData.description}</p>
+            
+            <div className="flex justify-center items-center gap-3 mt-4 md:justify-start md:mt-6">
+              <button 
+                className="vibe-button-primary"
+                onClick={() => setIsRequestModalOpen(true)}
+              >
+                <Plus size={18} />
+                <span>Add Song</span>
+              </button>
+              <button className="vibe-button-secondary">
+                <Share2 size={18} />
+                <span>Share</span>
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Tabs */}
-        <div className="flex border-b border-vibe-border mb-4">
+        {/* Tabs - Enhanced for clarity */}
+        <div className="flex border-b border-spotify-gray-light mb-6">
           <button
             onClick={() => setActiveTab('tracks')}
-            className={`vibe-tab ${activeTab === 'tracks' ? 'vibe-tab-active' : 'text-gray-400'}`}
+            className={`vibe-tab ${activeTab === 'tracks' ? 'vibe-tab-active' : ''}`}
+            aria-selected={activeTab === 'tracks'}
           >
             <div className="flex items-center gap-2">
               <Music size={16} />
@@ -165,7 +169,8 @@ const Playlist: React.FC = () => {
           </button>
           <button
             onClick={() => setActiveTab('requests')}
-            className={`vibe-tab ${activeTab === 'requests' ? 'vibe-tab-active' : 'text-gray-400'}`}
+            className={`vibe-tab ${activeTab === 'requests' ? 'vibe-tab-active' : ''}`}
+            aria-selected={activeTab === 'requests'}
           >
             <div className="flex items-center gap-2">
               <Plus size={16} />
@@ -175,7 +180,7 @@ const Playlist: React.FC = () => {
         </div>
 
         {/* Content */}
-        <div className="mt-4">
+        <div className="mt-4 pb-24">
           {activeTab === 'tracks' ? (
             <div className="space-y-3">
               {playlistData.songs.map((song) => (
@@ -192,53 +197,74 @@ const Playlist: React.FC = () => {
             </div>
           ) : (
             <div className="space-y-4">
-              {playlistData.requests.map((request) => (
-                <div key={request.id} className="vibe-card animate-fade-in">
-                  <SongCard
-                    title={request.title}
-                    artist={request.artist}
-                    coverImage={request.coverImage}
-                    status="pending"
-                    addedBy={request.addedBy}
-                    onPlay={() => handlePlay(request.id)}
-                  />
-                  {request.message && (
-                    <div className="mt-2 p-3 bg-vibe-card rounded-xl text-sm text-gray-300">
-                      "{request.message}"
+              {playlistData.requests.length > 0 ? (
+                playlistData.requests.map((request) => (
+                  <div key={request.id} className="vibe-card animate-fade-in">
+                    <SongCard
+                      title={request.title}
+                      artist={request.artist}
+                      coverImage={request.coverImage}
+                      status="pending"
+                      addedBy={request.addedBy}
+                      onPlay={() => handlePlay(request.id)}
+                    />
+                    {request.message && (
+                      <div className="mt-2 p-3 bg-spotify-gray rounded-xl text-sm text-gray-300">
+                        "{request.message}"
+                      </div>
+                    )}
+                    <div className="flex justify-end gap-2 mt-3">
+                      <button
+                        onClick={() => handleComment(request.id)}
+                        className="p-2 rounded-full bg-spotify-gray hover:bg-spotify-gray-light transition-colors"
+                        aria-label="Add comment"
+                      >
+                        <MessageCircle size={20} className="text-spotify-green" />
+                      </button>
+                      <button
+                        onClick={() => handleReject(request.id)}
+                        className="p-2 rounded-full bg-red-500/10 hover:bg-red-500/20 transition-colors"
+                        aria-label="Reject song"
+                      >
+                        <X size={20} className="text-red-400" />
+                      </button>
+                      <button
+                        onClick={() => handleApprove(request.id)}
+                        className="p-2 rounded-full bg-spotify-green/10 hover:bg-spotify-green/20 transition-colors"
+                        aria-label="Approve song"
+                      >
+                        <Check size={20} className="text-spotify-green" />
+                      </button>
                     </div>
-                  )}
-                  <div className="flex justify-end gap-2 mt-3">
-                    <button
-                      onClick={() => handleComment(request.id)}
-                      className="p-2 rounded-full bg-vibe-card hover:bg-vibe-card-hover transition-colors"
-                    >
-                      <MessageCircle size={20} className="text-vibe-purple" />
-                    </button>
-                    <button
-                      onClick={() => handleReject(request.id)}
-                      className="p-2 rounded-full bg-red-500/10 hover:bg-red-500/20 transition-colors"
-                    >
-                      <X size={20} className="text-red-400" />
-                    </button>
-                    <button
-                      onClick={() => handleApprove(request.id)}
-                      className="p-2 rounded-full bg-vibe-green/10 hover:bg-vibe-green/20 transition-colors"
-                    >
-                      <Check size={20} className="text-vibe-green" />
-                    </button>
                   </div>
+                ))
+              ) : (
+                <div className="text-center py-8 text-spotify-text-gray">
+                  No song requests yet.
                 </div>
-              ))}
+              )}
             </div>
           )}
         </div>
       </div>
 
-      {/* Request Modal */}
+      {/* Request Modal - Enhanced for better UX */}
       {isRequestModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-          <div className="glass-card p-6 w-full max-w-md rounded-2xl animate-scale-in">
-            <h2 className="text-xl font-bold text-white mb-4">Suggest a Song</h2>
+        <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
+          <div 
+            className="glass-card p-6 w-full max-w-md rounded-2xl animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-bold text-white">Suggest a Song</h2>
+              <button 
+                onClick={() => setIsRequestModalOpen(false)}
+                className="p-1 rounded-full hover:bg-spotify-gray-light"
+                aria-label="Close dialog"
+              >
+                <X size={18} className="text-spotify-text-gray" />
+              </button>
+            </div>
             
             <form onSubmit={handleSubmitRequest}>
               <div className="mb-4">
