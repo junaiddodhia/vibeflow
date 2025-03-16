@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { 
@@ -209,31 +208,31 @@ const Playlist: React.FC = () => {
                       onPlay={() => handlePlay(request.id)}
                     />
                     {request.message && (
-                      <div className="mt-2 p-3 bg-spotify-gray rounded-xl text-sm text-gray-300">
+                      <div className="mt-2 p-3 bg-[#333333] rounded-xl text-sm text-gray-300">
                         "{request.message}"
                       </div>
                     )}
                     <div className="flex justify-end gap-2 mt-3">
                       <button
                         onClick={() => handleComment(request.id)}
-                        className="p-2 rounded-full bg-spotify-gray hover:bg-spotify-gray-light transition-colors"
+                        className="p-2 rounded-full bg-[#333333] hover:bg-[#444444] transition-colors flex items-center justify-center"
                         aria-label="Add comment"
                       >
-                        <MessageCircle size={20} className="text-spotify-green" />
+                        <MessageCircle size={20} className="text-[#1DB954]" />
                       </button>
                       <button
                         onClick={() => handleReject(request.id)}
-                        className="p-2 rounded-full bg-red-500/10 hover:bg-red-500/20 transition-colors"
+                        className="p-2 rounded-full bg-red-500/10 hover:bg-red-500/20 transition-colors flex items-center justify-center"
                         aria-label="Reject song"
                       >
                         <X size={20} className="text-red-400" />
                       </button>
                       <button
                         onClick={() => handleApprove(request.id)}
-                        className="p-2 rounded-full bg-spotify-green/10 hover:bg-spotify-green/20 transition-colors"
+                        className="p-2 rounded-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 transition-colors flex items-center justify-center"
                         aria-label="Approve song"
                       >
-                        <Check size={20} className="text-spotify-green" />
+                        <Check size={20} className="text-[#1DB954]" />
                       </button>
                     </div>
                   </div>
