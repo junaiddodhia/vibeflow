@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MessageCircle, Plus, Check, X, User, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -74,11 +73,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
           <p className="text-xs text-spotify-white/70 mt-1 font-medium flex items-center">
             {songTitle} <ArrowRight size={12} className="mx-1 text-spotify-white/50" /> {playlistName}
           </p>
-          {message && (
-            <p className="text-xs text-spotify-white/80 mt-2 p-2 bg-[#0F0F0F] border-0 rounded-0">
-              "{message}"
-            </p>
-          )}
+          {/* Removed the message display here since it's already shown in the bottom row */}
         </div>
       </div>
       
