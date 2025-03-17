@@ -58,16 +58,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   return (
     <div className="p-4 bg-[#111] border-0 mb-3 transition-all duration-200 hover:bg-[#181818]">
       <div className="flex items-start gap-3">
-        {/* Left Column: Avatar and Action Icon */}
-        <div className="flex flex-col items-center space-y-2">
+        {/* Left Column: Avatar only */}
+        <div className="flex flex-col items-center">
           {/* User Profile Icon */}
           <div className="w-10 h-10 bg-[#0F0F0F] flex items-center justify-center">
             <User size={16} className="text-white/70" />
-          </div>
-          
-          {/* Action Icon */}
-          <div className={cn("w-6 h-6 flex items-center justify-center", config.iconColor)}>
-            <config.icon size={14} />
           </div>
         </div>
         
@@ -97,8 +92,14 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         </div>
       </div>
       
-      {/* Timestamp positioned at bottom right */}
-      <div className="flex justify-end mt-2">
+      {/* Bottom row with action icon and timestamp */}
+      <div className="flex justify-between items-center mt-3">
+        {/* Action Icon moved to bottom left */}
+        <div className={cn("w-6 h-6 flex items-center justify-center", config.iconColor)}>
+          <config.icon size={14} />
+        </div>
+        
+        {/* Timestamp positioned at bottom right */}
         <p className="text-xs text-spotify-white/50">{time}</p>
       </div>
     </div>
