@@ -68,8 +68,8 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
           </div>
           
           {/* Content */}
-          <div className="flex-1">
-            <p className="text-sm font-medium text-white">{config.title}</p>
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-medium text-white whitespace-nowrap overflow-hidden text-ellipsis">{config.title}</p>
             <p className="text-xs text-[#b3b3b3] mt-1">
               {songTitle} • {playlistName}
             </p>
