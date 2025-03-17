@@ -70,7 +70,7 @@ const Search: React.FC = () => {
         
         <SearchBar 
           onSearch={handleSearch} 
-          placeholder="Search for songs, playlists, or artists..."
+          placeholder="Search"
         />
         
         {!searchQuery && !searchResults && (

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Plus, Bell } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -87,7 +86,7 @@ const Home: React.FC = () => {
           </Link>
         </div>
 
-        <SearchBar onSearch={handleSearch} placeholder="Search songs or playlists..." />
+        <SearchBar onSearch={handleSearch} placeholder="Search" />
 
         <div className="mb-8 mt-6">
           <div className="flex justify-between items-center mb-4">
