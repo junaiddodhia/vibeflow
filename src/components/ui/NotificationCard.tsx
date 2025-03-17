@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MessageCircle, Plus, Check, X, User } from 'lucide-react';
+import { MessageCircle, Plus, Check, X, User, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 type NotificationType = 'request' | 'approval' | 'rejection' | 'comment';
@@ -76,8 +76,8 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
           <p className="text-sm font-medium text-white whitespace-nowrap overflow-hidden text-ellipsis">
             {config.title}
           </p>
-          <p className="text-xs text-spotify-white/70 mt-1 font-medium">
-            {songTitle} • {playlistName}
+          <p className="text-xs text-spotify-white/70 mt-1 font-medium flex items-center">
+            {songTitle} <ArrowRight size={12} className="mx-1 text-spotify-white/50" /> {playlistName}
           </p>
           {message && (
             <p className="text-xs text-spotify-white/80 mt-2 p-2 bg-[#0F0F0F] border-0">
