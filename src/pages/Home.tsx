@@ -42,6 +42,15 @@ const recentActivity = [
     thumbnailUrl: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=300&h=300'
   },
   {
+    type: 'rejection' as const,
+    playlistName: 'Weekend Vibes',
+    songTitle: 'Bad Habits',
+    username: 'Sarah',
+    time: '3 hours ago',
+    message: 'Not quite the right fit for this playlist.',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&q=80&w=300&h=300'
+  },
+  {
     type: 'approval' as const,
     playlistName: 'Coding Focus',
     songTitle: 'Midnight City',
