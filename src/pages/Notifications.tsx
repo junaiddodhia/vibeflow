@@ -38,7 +38,7 @@ const notifications = [
     songTitle: 'Power Up',
     username: 'Jordan',
     time: '1 day ago',
-    message: 'Great song for the final stretch!',
+    message: 'Perfect for the playlist vibe!',
     thumbnailUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=300&h=300'
   },
   {
