@@ -54,9 +54,17 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
     <div className="p-3 bg-[#222222] hover:bg-[#2a2a2a] border border-[#333333] rounded-md mb-3 animate-fade-in transition-all duration-200">
       <div className="flex items-start justify-between">
         <div className="flex items-start">
-          {/* User Profile Icon */}
-          <div className="w-8 h-8 rounded-full bg-[#333333] flex items-center justify-center mr-3 text-[#aaaaaa]">
-            <config.icon size={16} />
+          {/* User Profile Icon - Top Left */}
+          <div className="flex flex-col items-center mr-3">
+            <div className="w-8 h-8 rounded-full bg-[#333333] flex items-center justify-center text-[#aaaaaa] mb-4">
+              {/* This would be the user avatar in a real app */}
+              <span className="text-xs font-bold">{username.charAt(0).toUpperCase()}</span>
+            </div>
+            
+            {/* Action Icon - Bottom Left */}
+            <div className="w-6 h-6 rounded-full bg-[#333333] flex items-center justify-center text-[#aaaaaa]">
+              <config.icon size={14} />
+            </div>
           </div>
           
           {/* Content */}
