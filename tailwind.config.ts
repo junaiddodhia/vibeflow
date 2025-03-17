@@ -86,6 +86,7 @@ export default {
 					'gray-lighter': '#3E3E3E',
 					'text-gray': '#B3B3B3',
 					white: '#FFFFFF',
+					blue: '#1E3A8A'
 				}
 			},
 			borderRadius: {

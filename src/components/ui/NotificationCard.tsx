@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { MessageCircle, Plus, Check, X } from 'lucide-react';
+import { MessageCircle, Plus, Check, X, User } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 type NotificationType = 'request' | 'approval' | 'rejection' | 'comment';
 
@@ -28,22 +29,26 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       case 'request':
         return {
           icon: Plus,
-          title: `${username} requested to add a song`
+          title: `${username} requested to add a song`,
+          iconColor: 'bg-spotify-green text-black'
         };
       case 'approval':
         return {
           icon: Check,
-          title: `${username} approved your song request`
+          title: `${username} approved your song request`,
+          iconColor: 'bg-spotify-green text-black'
         };
       case 'rejection':
         return {
           icon: X,
-          title: `${username} rejected your song request`
+          title: `${username} rejected your song request`,
+          iconColor: 'bg-destructive text-white'
         };
       case 'comment':
         return {
           icon: MessageCircle,
-          title: `${username} commented on your request`
+          title: `${username} commented on your request`,
+          iconColor: 'bg-spotify-blue text-white'
         };
     }
   };
@@ -51,39 +56,39 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   const config = getTypeConfig();
 
   return (
-    <div className="p-3 bg-[#222222] hover:bg-[#2a2a2a] border border-[#333333] rounded-md mb-3 animate-fade-in transition-all duration-200">
-      <div className="flex items-start justify-between">
-        <div className="flex items-start">
-          {/* User Profile Icon - Top Left */}
-          <div className="flex flex-col items-center mr-3">
-            <div className="w-8 h-8 rounded-full bg-[#333333] flex items-center justify-center text-[#aaaaaa] mb-4">
-              {/* This would be the user avatar in a real app */}
-              <span className="text-xs font-bold">{username.charAt(0).toUpperCase()}</span>
-            </div>
-            
-            {/* Action Icon - Bottom Left */}
-            <div className="w-6 h-6 rounded-full bg-[#333333] flex items-center justify-center text-[#aaaaaa]">
-              <config.icon size={14} />
-            </div>
+    <div className="p-4 glass-card rounded-lg mb-3 transition-all duration-200 hover:scale-[1.01] border border-white/5">
+      <div className="flex items-start gap-3">
+        {/* Left Column: Avatar and Action Icon */}
+        <div className="flex flex-col items-center space-y-2">
+          {/* User Profile Icon */}
+          <div className="w-10 h-10 rounded-full bg-[#232323] flex items-center justify-center shadow-sm">
+            <User size={16} className="text-white/70" />
           </div>
           
-          {/* Content */}
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-white whitespace-nowrap overflow-hidden text-ellipsis">{config.title}</p>
-            <p className="text-xs text-[#b3b3b3] mt-1">
-              {songTitle} • {playlistName}
-            </p>
-            {message && (
-              <p className="text-xs text-[#b3b3b3] mt-2 p-2 bg-[#2a2a2a] rounded-md border border-[#333333]">
-                "{message}"
-              </p>
-            )}
-            <p className="text-xs text-[#777777] mt-2">{time}</p>
+          {/* Action Icon */}
+          <div className={cn("w-6 h-6 rounded-full flex items-center justify-center shadow-sm", config.iconColor)}>
+            <config.icon size={14} />
           </div>
         </div>
         
-        {/* Song Thumbnail (Right Side) */}
-        <div className="w-10 h-10 min-w-10 rounded-md overflow-hidden ml-3">
+        {/* Middle: Content */}
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-medium text-white whitespace-nowrap overflow-hidden text-ellipsis">
+            {config.title}
+          </p>
+          <p className="text-xs text-spotify-white/70 mt-1 font-medium">
+            {songTitle} • {playlistName}
+          </p>
+          {message && (
+            <p className="text-xs text-spotify-white/80 mt-2 p-2 bg-black/20 rounded-md backdrop-blur-sm">
+              "{message}"
+            </p>
+          )}
+          <p className="text-xs text-spotify-white/50 mt-2">{time}</p>
+        </div>
+        
+        {/* Right: Song Thumbnail */}
+        <div className="w-12 h-12 rounded-md overflow-hidden shadow-md">
           <img 
             src={thumbnailUrl} 
             alt={`${songTitle} thumbnail`} 
