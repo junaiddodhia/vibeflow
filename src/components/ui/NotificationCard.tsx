@@ -30,25 +30,25 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         return {
           icon: Plus,
           title: `${username} requested to add a song`,
-          iconColor: 'text-spotify-green'
+          iconColor: 'bg-spotify-green text-black'
         };
       case 'approval':
         return {
           icon: Check,
           title: `${username} approved your song request`,
-          iconColor: 'text-spotify-green'
+          iconColor: 'bg-spotify-green text-black'
         };
       case 'rejection':
         return {
           icon: X,
           title: `${username} rejected your song request`,
-          iconColor: 'text-red-500'
+          iconColor: 'bg-destructive text-black'
         };
       case 'comment':
         return {
           icon: MessageCircle,
           title: `${username} commented on your request`,
-          iconColor: 'text-spotify-blue'
+          iconColor: 'bg-spotify-blue text-white'
         };
     }
   };
@@ -84,8 +84,8 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       
       {/* Bottom row with action icon and timestamp */}
       <div className="flex justify-between items-center mt-3">
-        {/* Action Icon at bottom left - removed background, applying direct color */}
-        <div className={cn(config.iconColor)}>
+        {/* Action Icon at bottom left */}
+        <div className={cn("w-6 h-6 flex items-center justify-center rounded-0", config.iconColor)}>
           <config.icon size={14} />
         </div>
         
