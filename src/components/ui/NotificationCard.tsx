@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { MessageCircle, Plus, Check, X, User, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -29,25 +30,29 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         return {
           icon: Plus,
           title: `${username} requested to add a song`,
-          iconColor: 'text-spotify-green'
+          iconColor: 'text-spotify-green',
+          bgColor: 'bg-spotify-green/10'
         };
       case 'approval':
         return {
           icon: Check,
           title: `${username} approved your song request`,
-          iconColor: 'text-spotify-green'
+          iconColor: 'text-spotify-green',
+          bgColor: 'bg-spotify-green/10'
         };
       case 'rejection':
         return {
           icon: X,
           title: `${username} rejected your song request`,
-          iconColor: 'text-destructive'
+          iconColor: 'text-destructive',
+          bgColor: 'bg-destructive/10'
         };
       case 'comment':
         return {
           icon: MessageCircle,
           title: `${username} commented on your request`,
-          iconColor: 'text-spotify-blue'
+          iconColor: 'text-spotify-blue',
+          bgColor: 'bg-spotify-blue/10'
         };
     }
   };
@@ -77,12 +82,14 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         </div>
       </div>
       
-      {/* Bottom row with action icon only */}
+      {/* Bottom row with action icon and background */}
       <div className="flex items-center mt-3">
-        {/* Action Icon */}
-        <div className={cn("flex items-center", config.iconColor)}>
-          <config.icon size={14} />
-          {message && <span className="ml-2 text-xs text-spotify-white/80">"{message}"</span>}
+        {/* Action Icon with Background */}
+        <div className={cn("flex items-center px-2 py-1 rounded-sm", config.bgColor)}>
+          <span className={cn("flex items-center", config.iconColor)}>
+            <config.icon size={14} />
+            {message && <span className="ml-2 text-xs text-spotify-white/80">"{message}"</span>}
+          </span>
         </div>
       </div>
     </div>
