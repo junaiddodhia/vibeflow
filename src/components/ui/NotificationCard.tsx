@@ -200,18 +200,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
           </div>
         );
       case 'approval':
-        return (
-          <div className="mt-4">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="w-full bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
-              onClick={handleDismiss}
-            >
-              <Check size={16} className="text-spotify-green" />
-            </Button>
-          </div>
-        );
+        return null;
       case 'rejection':
         return null;
       case 'comment':
