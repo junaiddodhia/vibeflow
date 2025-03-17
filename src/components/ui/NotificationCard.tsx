@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { MessageCircle, Plus, Check, X, Music, ListMusic, Heart, Reply, ThumbsUp, FileQuestion } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -56,7 +57,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       case 'request':
         return {
           icon: Plus,
-          title: `${username} requested to add a song`,
+          title: `${username} requested to add a song.`,
           iconColor: 'text-spotify-green',
           bgColor: 'bg-spotify-green/10',
           emoji: ''
@@ -64,26 +65,26 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       case 'approval':
         return {
           icon: Check,
-          title: `Your request to add '${songTitle}' was approved!`,
+          title: `Your request was approved.`,
           iconColor: 'text-spotify-green',
           bgColor: 'bg-spotify-green/10',
-          emoji: '🎉'
+          emoji: ''
         };
       case 'rejection':
         return {
           icon: X,
-          title: `Your request to add '${songTitle}' was rejected`,
+          title: `Your request was rejected.`,
           iconColor: 'text-destructive',
           bgColor: 'bg-destructive/10',
-          emoji: '🚫'
+          emoji: ''
         };
       case 'comment':
         return {
           icon: MessageCircle,
-          title: `Your request received a comment`,
+          title: `Your request received a comment.`,
           iconColor: 'text-spotify-blue',
           bgColor: 'bg-spotify-blue/10',
-          emoji: '💬'
+          emoji: ''
         };
     }
   };
@@ -322,7 +323,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         
         <div className="flex-1 min-w-0">
           <p className="text-sm font-medium text-white truncate">
-            {config.emoji} {config.title}
+            {config.title}
           </p>
         </div>
       </div>
@@ -339,7 +340,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         <div className="mt-2 ml-9">
           <Card className="bg-[#202020] border-0 p-3">
             <p className="text-xs text-white/90">
-              <span className="text-white/50">📝</span> {message}
+              <span className="text-white/50"></span> {message}
             </p>
           </Card>
         </div>
