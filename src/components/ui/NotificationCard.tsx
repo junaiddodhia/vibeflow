@@ -11,6 +11,7 @@ interface NotificationCardProps {
   username: string;
   time: string;
   message?: string;
+  thumbnailUrl?: string;
 }
 
 const NotificationCard: React.FC<NotificationCardProps> = ({
@@ -19,7 +20,8 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   songTitle,
   username,
   time,
-  message
+  message,
+  thumbnailUrl = 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=300&h=300' // Default thumbnail
 }) => {
   const getTypeConfig = () => {
     switch (type) {
@@ -51,11 +53,21 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   return (
     <div className="p-3 bg-[#222222] hover:bg-[#2a2a2a] border border-[#333333] rounded-md mb-3 animate-fade-in transition-all duration-200">
       <div className="flex items-start">
-        <div className="mr-3 text-[#aaaaaa]">
-          <config.icon size={16} />
+        <div className="w-10 h-10 min-w-10 rounded-md overflow-hidden mr-3">
+          <img 
+            src={thumbnailUrl} 
+            alt={`${songTitle} thumbnail`} 
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
         </div>
         <div className="flex-1">
-          <p className="text-sm font-medium text-white">{config.title}</p>
+          <div className="flex items-center">
+            <div className="mr-2 text-[#aaaaaa]">
+              <config.icon size={16} />
+            </div>
+            <p className="text-sm font-medium text-white">{config.title}</p>
+          </div>
           <p className="text-xs text-[#b3b3b3] mt-1">
             {songTitle} • {playlistName}
           </p>

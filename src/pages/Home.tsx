@@ -38,14 +38,16 @@ const recentActivity = [
     playlistName: 'Indie Essentials',
     songTitle: 'Lost in Yesterday',
     username: 'Alex',
-    time: '2 hours ago'
+    time: '2 hours ago',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=300&h=300'
   },
   {
     type: 'approval' as const,
     playlistName: 'Coding Focus',
     songTitle: 'Midnight City',
     username: 'Maya',
-    time: '5 hours ago'
+    time: '5 hours ago',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=300&h=300'
   },
   {
     type: 'comment' as const,
@@ -53,7 +55,8 @@ const recentActivity = [
     songTitle: 'Dreamland',
     username: 'Jordan',
     time: '1 day ago',
-    message: 'Perfect for the playlist vibe!'
+    message: 'Perfect for the playlist vibe!',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=300&h=300'
   }
 ];
 
@@ -115,6 +118,7 @@ const Home: React.FC = () => {
                 username={activity.username}
                 time={activity.time}
                 message={activity.message}
+                thumbnailUrl={activity.thumbnailUrl}
               />
             ))}
           </div>
