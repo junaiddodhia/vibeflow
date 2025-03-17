@@ -177,7 +177,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
               onClick={handleCommentOpen}
             >
               <MessageCircle size={16} />
@@ -186,7 +186,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
               onClick={handleReject}
             >
               <X size={16} className="text-destructive" />
@@ -195,7 +195,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
               onClick={handleApprove}
             >
               <Check size={16} className="text-spotify-green" />
@@ -211,27 +211,27 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+                  className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
                 >
                   <ThumbsUp size={16} className="text-spotify-blue" />
                   <span className="ml-1">Thank You</span>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 bg-[#202020] border-0">
+              <PopoverContent className="w-auto p-0 bg-[#202020] border-0 rounded-none">
                 <div className="p-3">
                   <p className="text-xs text-white/70 mb-2">Send a thank you?</p>
                   <div className="flex space-x-2">
                     <Button 
                       size="sm" 
                       variant="ghost"
-                      className="bg-[#303030] hover:bg-[#404040] text-white/70"
+                      className="bg-[#303030] hover:bg-[#404040] text-white/70 rounded-none"
                       onClick={() => handleDismiss()}
                     >
                       Cancel
                     </Button>
                     <Button 
                       size="sm"
-                      className="bg-spotify-green hover:bg-spotify-green/80 text-white"
+                      className="bg-spotify-green hover:bg-spotify-green/80 text-white rounded-none"
                       onClick={() => {
                         handleThankYou();
                         handleDismiss();
@@ -246,7 +246,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
@@ -260,7 +260,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
               onClick={handleAskWhy}
             >
               <FileQuestion size={16} className="text-spotify-blue" />
@@ -269,7 +269,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
@@ -283,7 +283,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
               onClick={handleReact}
             >
               <Heart size={16} className="text-spotify-green" />
@@ -292,7 +292,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
               onClick={handleReplyOpen}
             >
               <Reply size={16} className="text-spotify-blue" />
@@ -301,7 +301,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
@@ -316,7 +316,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
     <div className="p-4 bg-[#111] border-0 mb-3 transition-all duration-200 hover:bg-[#181818]">
       <div className="flex items-start gap-3">
         <div 
-          className={cn("p-2 rounded-full", config.bgColor)}
+          className={cn("p-2 rounded-none", config.bgColor)}
         >
           <Icon size={14} className={config.iconColor} />
         </div>
@@ -338,7 +338,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       
       {type === 'comment' && message && (
         <div className="mt-2 ml-9">
-          <Card className="bg-[#202020] border-0 p-3">
+          <Card className="bg-[#202020] border-0 p-3 rounded-none">
             <p className="text-xs text-white/90">
               <span className="text-white/50"></span> {message}
             </p>
@@ -349,14 +349,14 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       {renderActionButtons()}
 
       <Dialog open={isCommentDialogOpen} onOpenChange={setIsCommentDialogOpen}>
-        <DialogContent className="bg-[#202020] border-0 max-w-[320px] p-4">
+        <DialogContent className="bg-[#202020] border-0 max-w-[320px] p-4 rounded-none">
           <h3 className="text-sm font-semibold text-white mb-2">Add a Comment</h3>
           <Textarea 
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}
             placeholder="Enter your comment..."
             maxLength={50}
-            className="bg-[#333] border-0 resize-none text-sm text-white placeholder:text-white/50 focus-visible:ring-0 min-h-[60px]"
+            className="bg-[#333] border-0 resize-none text-sm text-white placeholder:text-white/50 focus-visible:ring-0 min-h-[60px] rounded-none"
           />
           <div className="text-[10px] text-white/50 text-right mt-1">
             {commentText.length}/50
@@ -365,14 +365,14 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="outline" 
               size="sm"
-              className="bg-transparent border-white/20 text-white/70 hover:bg-white/10"
+              className="bg-transparent border-white/20 text-white/70 hover:bg-white/10 rounded-none"
               onClick={() => setIsCommentDialogOpen(false)}
             >
               Cancel
             </Button>
             <Button 
               size="sm"
-              className="bg-spotify-green hover:bg-spotify-green-dark"
+              className="bg-spotify-green hover:bg-spotify-green-dark rounded-none"
               onClick={handleCommentSubmit}
             >
               Submit
@@ -382,14 +382,14 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       </Dialog>
 
       <Dialog open={isReplyDialogOpen} onOpenChange={setIsReplyDialogOpen}>
-        <DialogContent className="bg-[#202020] border-0 max-w-[320px] p-4">
+        <DialogContent className="bg-[#202020] border-0 max-w-[320px] p-4 rounded-none">
           <h3 className="text-sm font-semibold text-white mb-2">Reply to Comment</h3>
           <Textarea 
             value={replyText}
             onChange={(e) => setReplyText(e.target.value)}
             placeholder="Enter your reply..."
             maxLength={50}
-            className="bg-[#333] border-0 resize-none text-sm text-white placeholder:text-white/50 focus-visible:ring-0 min-h-[60px]"
+            className="bg-[#333] border-0 resize-none text-sm text-white placeholder:text-white/50 focus-visible:ring-0 min-h-[60px] rounded-none"
           />
           <div className="text-[10px] text-white/50 text-right mt-1">
             {replyText.length}/50
@@ -398,14 +398,14 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="outline" 
               size="sm"
-              className="bg-transparent border-white/20 text-white/70 hover:bg-white/10"
+              className="bg-transparent border-white/20 text-white/70 hover:bg-white/10 rounded-none"
               onClick={() => setIsReplyDialogOpen(false)}
             >
               Cancel
             </Button>
             <Button 
               size="sm"
-              className="bg-spotify-green hover:bg-spotify-green-dark"
+              className="bg-spotify-green hover:bg-spotify-green-dark rounded-none"
               onClick={handleReplySubmit}
             >
               Submit

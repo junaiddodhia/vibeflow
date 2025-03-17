@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
@@ -99,6 +98,15 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+  
+  /* Reset all border-radius to 0 */
+  .rounded, .rounded-md, .rounded-lg, .rounded-xl, .rounded-full {
+    border-radius: 0 !important;
+  }
+  
+  button, input, select, textarea, [role="button"] {
+    border-radius: 0 !important;
+  }
 }
 
 @layer components {
@@ -111,7 +119,7 @@
   }
   
   .vibe-button {
-    @apply px-4 py-2 border-0 font-medium transition-all duration-300 flex items-center justify-center gap-2;
+    @apply px-4 py-2 border-0 font-medium transition-all duration-300 flex items-center justify-center gap-2 rounded-none;
   }
   
   .vibe-button-primary {
@@ -131,10 +139,10 @@
   }
   
   .vibe-card {
-    @apply bg-[#000000] p-4 transition-all duration-300 hover:bg-[#111] border border-[#222];
+    @apply bg-[#000000] p-4 transition-all duration-300 hover:bg-[#111] border border-[#222] rounded-none;
   }
   
   .vibe-input {
-    @apply bg-[#111] border border-[#222] px-4 py-2 w-full focus:outline-none focus:ring-1 focus:ring-[#1DB954]/50;
+    @apply bg-[#111] border border-[#222] px-4 py-2 w-full focus:outline-none focus:ring-1 focus:ring-[#1DB954]/50 rounded-none;
   }
 }
