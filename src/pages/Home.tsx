@@ -77,7 +77,7 @@ const Home: React.FC = () => {
   });
   
   return <PageContainer>
-      <div className="pt-8">
+      <div className="pt-8 pb-4">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-white">VibeFlow</h1>
           <Link to="/notifications">
@@ -105,23 +105,23 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <div>
+        <div className="mb-20">
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-lg font-semibold text-white">Songs</h2>
             <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'all' | 'requested' | 'approved' | 'rejected')} className="w-auto">
-              <TabsList className="bg-[#282828] h-8">
-                <TabsTrigger value="all" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black">
+              <TabsList className="bg-[#282828] h-8 overflow-x-auto flex-nowrap">
+                <TabsTrigger value="all" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black whitespace-nowrap">
                   All
                 </TabsTrigger>
-                <TabsTrigger value="requested" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1">
+                <TabsTrigger value="requested" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1 whitespace-nowrap">
                   <ListMusic size={12} />
                   Requested
                 </TabsTrigger>
-                <TabsTrigger value="approved" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1">
+                <TabsTrigger value="approved" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1 whitespace-nowrap">
                   <Check size={12} />
                   Approved
                 </TabsTrigger>
-                <TabsTrigger value="rejected" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1">
+                <TabsTrigger value="rejected" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1 whitespace-nowrap">
                   <X size={12} />
                   Rejected
                 </TabsTrigger>
