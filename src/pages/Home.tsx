@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import { Plus, Bell, Check, X } from 'lucide-react';
+import { Plus, Bell, Check, X, ListMusic } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageContainer from '../components/layout/PageContainer';
 import PlaylistCard from '../components/ui/PlaylistCard';
@@ -60,7 +61,7 @@ const recentActivity = [{
 }];
 
 const Home: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'all' | 'approved' | 'rejected'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'requested' | 'approved' | 'rejected'>('all');
   
   const handleSearch = (query: string) => {
     console.log('Searching for:', query);
@@ -69,6 +70,7 @@ const Home: React.FC = () => {
 
   const filteredActivity = recentActivity.filter(activity => {
     if (activeTab === 'all') return true;
+    if (activeTab === 'requested') return activity.type === 'request';
     if (activeTab === 'approved') return activity.type === 'approval';
     if (activeTab === 'rejected') return activity.type === 'rejection';
     return true;
@@ -105,11 +107,15 @@ const Home: React.FC = () => {
 
         <div>
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-lg font-semibold text-white">Requests</h2>
-            <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'all' | 'approved' | 'rejected')} className="w-auto">
+            <h2 className="text-lg font-semibold text-white">Songs</h2>
+            <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'all' | 'requested' | 'approved' | 'rejected')} className="w-auto">
               <TabsList className="bg-[#282828] h-8">
                 <TabsTrigger value="all" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black">
                   All
+                </TabsTrigger>
+                <TabsTrigger value="requested" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1">
+                  <ListMusic size={12} />
+                  Requested
                 </TabsTrigger>
                 <TabsTrigger value="approved" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1">
                   <Check size={12} />
