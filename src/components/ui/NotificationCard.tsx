@@ -276,14 +276,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   return (
     <div className="p-4 bg-[#111] border-0 mb-3 transition-all duration-200 hover:bg-[#181818]">
       <div className="flex items-start">
-        <div 
-          className={cn("p-2", config.bgColor)}
-        >
-          <Icon size={16} className={config.iconColor} />
-        </div>
-        
-        <div className="flex-1 min-w-0 ml-3">
-          <p className="text-sm font-medium text-white">
+        <div className="flex-1 min-w-0">
+          <p className="text-sm font-medium text-white flex items-center flex-wrap">
+            <span className={cn("inline-flex p-1 mr-1.5", config.bgColor)}>
+              <Icon size={12} className={config.iconColor} />
+            </span>
             {config.title}
           </p>
           
