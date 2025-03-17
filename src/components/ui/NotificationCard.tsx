@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MessageCircle, Plus, Check, X, Music, ListMusic, Heart, Reply, ThumbsUp, FileQuestion } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -202,19 +201,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         );
       case 'approval':
         return (
-          <div className="grid grid-cols-2 gap-2 mt-4">
+          <div className="mt-4">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
-              onClick={handleThankYou}
-            >
-              <ThumbsUp size={16} className="text-spotify-blue" />
-            </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
+              className="w-full bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
@@ -222,16 +213,10 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
           </div>
         );
       case 'rejection':
+        return null;
+      case 'comment':
         return (
-          <div className="grid grid-cols-2 gap-2 mt-4">
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
-              onClick={handleAskWhy}
-            >
-              <FileQuestion size={16} className="text-spotify-blue" />
-            </Button>
+          <div className="grid grid-cols-3 gap-2 mt-4">
             <Button 
               variant="ghost" 
               size="sm" 
@@ -240,11 +225,6 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             >
               <Check size={16} className="text-spotify-green" />
             </Button>
-          </div>
-        );
-      case 'comment':
-        return (
-          <div className="grid grid-cols-3 gap-2 mt-4">
             <Button 
               variant="ghost" 
               size="sm" 
@@ -260,14 +240,6 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
               onClick={handleReplyOpen}
             >
               <Reply size={16} className="text-spotify-blue" />
-            </Button>
-            <Button 
-              variant="ghost" 
-              size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
-              onClick={handleDismiss}
-            >
-              <Check size={16} className="text-spotify-green" />
             </Button>
           </div>
         );
