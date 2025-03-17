@@ -60,9 +60,9 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       <div className="flex items-start gap-3">
         {/* Left Column: Avatar only */}
         <div className="flex flex-col items-center">
-          {/* User Profile Icon */}
-          <div className="w-10 h-10 bg-[#0F0F0F] flex items-center justify-center">
-            <User size={16} className="text-white/70" />
+          {/* User Profile Icon - Updated to match the size of the action icon */}
+          <div className="w-6 h-6 bg-[#0F0F0F] flex items-center justify-center">
+            <User size={14} className="text-white/70" />
           </div>
         </div>
         
