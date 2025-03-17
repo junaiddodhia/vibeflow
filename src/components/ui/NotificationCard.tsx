@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { MessageCircle, Plus, Check, X, User, ArrowRight, Music, List } from 'lucide-react';
+import { MessageCircle, Plus, Check, X, User, ArrowRight, Music, ListMusic } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from './button';
 import { Dialog, DialogContent } from './dialog';
@@ -128,7 +128,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         <Music size={14} className="mr-1 text-spotify-white/50" />
         <span className="font-medium">{songTitle}</span>
         <ArrowRight size={12} className="mx-1 text-spotify-white/50" />
-        <List size={14} className="mr-1 text-spotify-white/50" />
+        <ListMusic size={14} className="mr-1 text-spotify-white/50" />
         <span className="font-medium">{playlistName}</span>
       </div>
       
