@@ -172,11 +172,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
     switch (type) {
       case 'request':
         return (
-          <div className="grid grid-cols-10 gap-0.5 mt-3">
+          <div className="grid grid-cols-10 gap-2 mt-4">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleApprove}
             >
               <Check size={16} className="text-spotify-green" />
@@ -184,7 +184,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleReject}
             >
               <X size={16} className="text-destructive" />
@@ -192,7 +192,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="col-span-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="col-span-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleCommentOpen}
             >
               <MessageCircle size={16} />
@@ -201,11 +201,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         );
       case 'approval':
         return (
-          <div className="grid grid-cols-2 gap-0.5 mt-3">
+          <div className="grid grid-cols-2 gap-2 mt-4">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleThankYou}
             >
               <ThumbsUp size={16} className="text-spotify-blue" />
@@ -213,7 +213,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
@@ -222,11 +222,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         );
       case 'rejection':
         return (
-          <div className="grid grid-cols-2 gap-0.5 mt-3">
+          <div className="grid grid-cols-2 gap-2 mt-4">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleAskWhy}
             >
               <FileQuestion size={16} className="text-spotify-blue" />
@@ -234,7 +234,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
@@ -243,11 +243,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         );
       case 'comment':
         return (
-          <div className="grid grid-cols-3 gap-0.5 mt-3">
+          <div className="grid grid-cols-3 gap-2 mt-4">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleReact}
             >
               <Heart size={16} className="text-spotify-green" />
@@ -255,7 +255,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleReplyOpen}
             >
               <Reply size={16} className="text-spotify-blue" />
@@ -263,7 +263,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
@@ -298,7 +298,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
           </div>
           
           {type === 'comment' && message && (
-            <div className="mt-2">
+            <div className="mt-3">
               <Card className="bg-[#202020] border-0 p-3">
                 <p className="text-xs text-white/90 text-left">
                   {message}
