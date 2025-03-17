@@ -56,15 +56,15 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       case 'request':
         return {
           icon: Plus,
-          title: `${username} requested to add '${songTitle}' to ${playlistName}.`,
+          title: `${username} requested to add a song`,
           iconColor: 'text-spotify-green',
           bgColor: 'bg-spotify-green/10',
-          emoji: '📌'
+          emoji: ''
         };
       case 'approval':
         return {
           icon: Check,
-          title: `Your request to add '${songTitle}' to ${playlistName} was approved!`,
+          title: `Your request to add '${songTitle}' was approved!`,
           iconColor: 'text-spotify-green',
           bgColor: 'bg-spotify-green/10',
           emoji: '🎉'
@@ -72,7 +72,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       case 'rejection':
         return {
           icon: X,
-          title: `Your request to add '${songTitle}' to ${playlistName} was rejected.`,
+          title: `Your request to add '${songTitle}' was rejected`,
           iconColor: 'text-destructive',
           bgColor: 'bg-destructive/10',
           emoji: '🚫'
@@ -80,7 +80,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       case 'comment':
         return {
           icon: MessageCircle,
-          title: `Your request to add '${songTitle}' to ${playlistName} received a comment.`,
+          title: `Your request received a comment`,
           iconColor: 'text-spotify-blue',
           bgColor: 'bg-spotify-blue/10',
           emoji: '💬'
