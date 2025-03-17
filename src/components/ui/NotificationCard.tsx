@@ -84,7 +84,6 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
               "{message}"
             </p>
           )}
-          <p className="text-xs text-spotify-white/50 mt-2">{time}</p>
         </div>
         
         {/* Right: Song Thumbnail */}
@@ -96,6 +95,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             loading="lazy"
           />
         </div>
+      </div>
+      
+      {/* Timestamp positioned at bottom right */}
+      <div className="flex justify-end mt-2">
+        <p className="text-xs text-spotify-white/50">{time}</p>
       </div>
     </div>
   );
