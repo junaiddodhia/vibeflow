@@ -93,7 +93,7 @@ const Home: React.FC = () => {
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-semibold text-white">Playlists</h2>
             <Link to="/create-playlist">
-              <button className="flex items-center space-x-1 bg-[#1DB954] hover:bg-[#1AA34A] text-black px-3 py-1.5 rounded-md text-sm font-medium transition-colors">
+              <button className="flex items-center space-x-1 bg-[#1DB954] hover:bg-[#1AA34A] text-black px-3 py-1.5 rounded-0 text-sm font-medium transition-colors">
                 <Plus size={16} />
                 <span>Create</span>
               </button>

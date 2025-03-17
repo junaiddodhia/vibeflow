@@ -56,12 +56,12 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   const config = getTypeConfig();
 
   return (
-    <div className="p-4 bg-[#111] border-0 mb-3 transition-all duration-200 hover:bg-[#181818] rounded-md">
+    <div className="p-4 bg-[#111] border-0 mb-3 transition-all duration-200 hover:bg-[#181818] rounded-0">
       <div className="flex items-start gap-3">
         {/* Left Column: Avatar only */}
         <div className="flex flex-col items-center">
           {/* User Profile Icon - Updated to match the size of the action icon */}
-          <div className="w-6 h-6 bg-[#0F0F0F] flex items-center justify-center rounded-md">
+          <div className="w-6 h-6 bg-[#0F0F0F] flex items-center justify-center rounded-0">
             <User size={14} className="text-white/70" />
           </div>
         </div>
@@ -75,7 +75,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             {songTitle} <ArrowRight size={12} className="mx-1 text-spotify-white/50" /> {playlistName}
           </p>
           {message && (
-            <p className="text-xs text-spotify-white/80 mt-2 p-2 bg-[#0F0F0F] border-0 rounded-md">
+            <p className="text-xs text-spotify-white/80 mt-2 p-2 bg-[#0F0F0F] border-0 rounded-0">
               "{message}"
             </p>
           )}
@@ -85,7 +85,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       {/* Bottom row with action icon and timestamp */}
       <div className="flex justify-between items-center mt-3">
         {/* Action Icon at bottom left */}
-        <div className={cn("w-6 h-6 flex items-center justify-center rounded-md", config.iconColor)}>
+        <div className={cn("w-6 h-6 flex items-center justify-center rounded-0", config.iconColor)}>
           <config.icon size={14} />
         </div>
         

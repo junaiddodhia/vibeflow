@@ -35,7 +35,7 @@ const StatusChip: React.FC<StatusChipProps> = ({ status }) => {
   const config = getStatusConfig();
 
   return (
-    <div className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium border ${config.className}`}>
+    <div className={`inline-flex items-center px-2 py-0.5 rounded-0 text-xs font-medium border ${config.className}`}>
       <config.icon size={10} className="mr-1" />
       {config.label}
     </div>

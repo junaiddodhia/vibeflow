@@ -21,9 +21,9 @@ const SongCard: React.FC<SongCardProps> = ({
   onPlay
 }) => {
   return (
-    <div className="p-3 rounded-md bg-spotify-gray hover:bg-spotify-gray-light transition-all duration-200 mb-2 animate-fade-in">
+    <div className="p-3 rounded-0 bg-spotify-gray hover:bg-spotify-gray-light transition-all duration-200 mb-2 animate-fade-in">
       <div className="flex items-center gap-3">
-        <div className="w-12 h-12 relative rounded-md overflow-hidden shadow-md flex-shrink-0 md:w-14 md:h-14">
+        <div className="w-12 h-12 relative rounded-0 overflow-hidden shadow-md flex-shrink-0 md:w-14 md:h-14">
           <img
             src={coverImage}
             alt={title}
@@ -47,7 +47,7 @@ const SongCard: React.FC<SongCardProps> = ({
         </div>
         <div className="flex items-center gap-2">
           {status && <StatusChip status={status} />}
-          <button className="p-1 rounded-full hover:bg-spotify-gray-lighter" aria-label="More options">
+          <button className="p-1 rounded-0 hover:bg-spotify-gray-lighter" aria-label="More options">
             <MoreHorizontal size={18} className="text-spotify-text-gray" />
           </button>
         </div>
