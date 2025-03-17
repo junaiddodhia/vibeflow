@@ -173,11 +173,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
     switch (type) {
       case 'request':
         return (
-          <div className="flex justify-between mt-3">
+          <div className="grid grid-cols-3 gap-0.5 mt-3">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleCommentOpen}
             >
               <MessageCircle size={16} />
@@ -186,7 +186,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleReject}
             >
               <X size={16} className="text-destructive" />
@@ -195,7 +195,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleApprove}
             >
               <Check size={16} className="text-spotify-green" />
@@ -205,33 +205,33 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         );
       case 'approval':
         return (
-          <div className="flex justify-between mt-3">
+          <div className="grid grid-cols-2 gap-0.5 mt-3">
             <Popover>
               <PopoverTrigger asChild>
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+                  className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
                 >
                   <ThumbsUp size={16} className="text-spotify-blue" />
                   <span className="ml-1">Thank You</span>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0 bg-[#202020] border-0 rounded-none">
+              <PopoverContent className="w-auto p-0 bg-[#202020] border-0">
                 <div className="p-3">
                   <p className="text-xs text-white/70 mb-2">Send a thank you?</p>
                   <div className="flex space-x-2">
                     <Button 
                       size="sm" 
                       variant="ghost"
-                      className="bg-[#303030] hover:bg-[#404040] text-white/70 rounded-none"
+                      className="bg-[#303030] hover:bg-[#404040] text-white/70"
                       onClick={() => handleDismiss()}
                     >
                       Cancel
                     </Button>
                     <Button 
                       size="sm"
-                      className="bg-spotify-green hover:bg-spotify-green/80 text-white rounded-none"
+                      className="bg-spotify-green hover:bg-spotify-green/80 text-white"
                       onClick={() => {
                         handleThankYou();
                         handleDismiss();
@@ -246,7 +246,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
@@ -256,11 +256,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         );
       case 'rejection':
         return (
-          <div className="flex justify-between mt-3">
+          <div className="grid grid-cols-2 gap-0.5 mt-3">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleAskWhy}
             >
               <FileQuestion size={16} className="text-spotify-blue" />
@@ -269,7 +269,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
@@ -279,11 +279,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         );
       case 'comment':
         return (
-          <div className="flex justify-between mt-3">
+          <div className="grid grid-cols-3 gap-0.5 mt-3">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleReact}
             >
               <Heart size={16} className="text-spotify-green" />
@@ -292,7 +292,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleReplyOpen}
             >
               <Reply size={16} className="text-spotify-blue" />
@@ -301,7 +301,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-none"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
