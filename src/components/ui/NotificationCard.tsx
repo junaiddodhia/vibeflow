@@ -85,7 +85,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
       {/* Bottom row with action icon and background */}
       <div className="flex items-center mt-3">
         {/* Action Icon with Background */}
-        <div className={cn("flex items-center px-2 py-1 rounded-sm", config.bgColor)}>
+        <div className={cn("flex items-center px-2 py-1 rounded-0", config.bgColor)}>
           <span className={cn("flex items-center", config.iconColor)}>
             <config.icon size={14} />
             {message && <span className="ml-2 text-xs text-spotify-white/80">"{message}"</span>}
