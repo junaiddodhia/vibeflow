@@ -42,7 +42,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         return {
           icon: X,
           title: `${username} rejected your song request`,
-          iconColor: 'bg-destructive text-white'
+          iconColor: 'bg-destructive text-black'
         };
       case 'comment':
         return {
@@ -56,17 +56,17 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   const config = getTypeConfig();
 
   return (
-    <div className="p-4 glass-card rounded-lg mb-3 transition-all duration-200 hover:scale-[1.01] border border-white/5">
+    <div className="p-4 black-card border-0 mb-3 transition-all duration-200 hover:bg-[#111]">
       <div className="flex items-start gap-3">
         {/* Left Column: Avatar and Action Icon */}
         <div className="flex flex-col items-center space-y-2">
           {/* User Profile Icon */}
-          <div className="w-10 h-10 rounded-full bg-[#232323] flex items-center justify-center shadow-sm">
+          <div className="w-10 h-10 bg-[#0F0F0F] flex items-center justify-center">
             <User size={16} className="text-white/70" />
           </div>
           
           {/* Action Icon */}
-          <div className={cn("w-6 h-6 rounded-full flex items-center justify-center shadow-sm", config.iconColor)}>
+          <div className={cn("w-6 h-6 flex items-center justify-center", config.iconColor)}>
             <config.icon size={14} />
           </div>
         </div>
@@ -80,7 +80,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             {songTitle} • {playlistName}
           </p>
           {message && (
-            <p className="text-xs text-spotify-white/80 mt-2 p-2 bg-black/20 rounded-md backdrop-blur-sm">
+            <p className="text-xs text-spotify-white/80 mt-2 p-2 bg-[#0F0F0F] border-0">
               "{message}"
             </p>
           )}
@@ -88,7 +88,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         </div>
         
         {/* Right: Song Thumbnail */}
-        <div className="w-12 h-12 rounded-md overflow-hidden shadow-md">
+        <div className="w-12 h-12 overflow-hidden">
           <img 
             src={thumbnailUrl} 
             alt={`${songTitle} thumbnail`} 
