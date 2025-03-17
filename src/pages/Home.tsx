@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Plus, Bell } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -6,53 +7,53 @@ import PlaylistCard from '../components/ui/PlaylistCard';
 import NotificationCard from '../components/ui/NotificationCard';
 import SearchBar from '../components/ui/SearchBar';
 
-// Mock data
+// Mock data - more realistic playlists
 const recentPlaylists = [
   {
     id: '1',
-    title: 'Weekend Vibes',
-    totalSongs: 24,
-    collaborators: 3,
-    coverImage: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=300&h=300'
-  },
-  {
-    id: '2',
-    title: 'Chill & Study',
-    totalSongs: 32,
+    title: 'Indie Essentials',
+    totalSongs: 42,
     collaborators: 5,
     coverImage: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=300&h=300'
   },
   {
-    id: '3',
-    title: 'Workout Mix',
-    totalSongs: 18,
-    collaborators: 2,
+    id: '2',
+    title: 'Coding Focus',
+    totalSongs: 36,
+    collaborators: 3,
     coverImage: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=300&h=300'
+  },
+  {
+    id: '3',
+    title: 'Evening Chill',
+    totalSongs: 28,
+    collaborators: 2,
+    coverImage: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=300&h=300'
   }
 ];
 
 const recentActivity = [
   {
     type: 'request' as const,
-    playlistName: 'Weekend Vibes',
-    songTitle: 'Starlight',
+    playlistName: 'Indie Essentials',
+    songTitle: 'Lost in Yesterday',
     username: 'Alex',
     time: '2 hours ago'
   },
   {
     type: 'approval' as const,
-    playlistName: 'Chill & Study',
-    songTitle: 'Ocean Waves',
+    playlistName: 'Coding Focus',
+    songTitle: 'Midnight City',
     username: 'Maya',
     time: '5 hours ago'
   },
   {
     type: 'comment' as const,
-    playlistName: 'Workout Mix',
-    songTitle: 'Power Up',
+    playlistName: 'Evening Chill',
+    songTitle: 'Dreamland',
     username: 'Jordan',
     time: '1 day ago',
-    message: 'Great song for the final stretch!'
+    message: 'Perfect for the playlist vibe!'
   }
 ];
 
@@ -68,8 +69,8 @@ const Home: React.FC = () => {
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-2xl font-bold text-white">VibeFlow</h1>
           <Link to="/notifications">
-            <button className="p-2 rounded-full bg-spotify-gray hover:bg-spotify-gray-light transition-colors">
-              <Bell size={20} className="text-white" />
+            <button className="text-white hover:text-spotify-green transition-colors">
+              <Bell size={20} />
             </button>
           </Link>
         </div>
@@ -78,10 +79,10 @@ const Home: React.FC = () => {
 
         <div className="mb-8 mt-6">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-lg font-semibold text-white">Your Playlists</h2>
+            <h2 className="text-lg font-semibold text-white">Playlists</h2>
             <Link to="/create-playlist">
-              <button className="vibe-button-primary">
-                <Plus size={18} />
+              <button className="flex items-center space-x-1 bg-[#1DB954] hover:bg-[#1AA34A] text-black px-3 py-1.5 rounded-md text-sm font-medium transition-colors">
+                <Plus size={16} />
                 <span>Create</span>
               </button>
             </Link>
@@ -102,7 +103,7 @@ const Home: React.FC = () => {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-white mb-4">Recent Activity</h2>
+          <h2 className="text-lg font-semibold text-white mb-4">Activity</h2>
           
           <div className="space-y-3">
             {recentActivity.map((activity, index) => (

@@ -32,7 +32,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
         />
         <input
           type="text"
-          className="bg-spotify-gray-light text-white w-full py-2 pl-10 pr-10 rounded-full focus:outline-none focus:ring-1 focus:ring-spotify-green/50"
+          className="bg-[#333333] text-white w-full py-2 pl-10 pr-10 rounded-md focus:outline-none focus:ring-1 focus:ring-[#1DB954]/50 border border-[#444444]"
           placeholder={placeholder}
           value={query}
           onChange={(e) => setQuery(e.target.value)}
