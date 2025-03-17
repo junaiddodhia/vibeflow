@@ -80,23 +80,25 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             </p>
           )}
         </div>
-        
-        {/* Right: Song Thumbnail */}
-        <div className="w-12 h-12 overflow-hidden">
-          <img 
-            src={thumbnailUrl} 
-            alt={`${songTitle} thumbnail`} 
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
       </div>
       
-      {/* Bottom row with action icon and timestamp */}
-      <div className="flex justify-between items-center mt-3">
-        {/* Action Icon moved to bottom left */}
+      {/* Bottom row with action icon, image, and timestamp */}
+      <div className="flex items-center mt-3">
+        {/* Action Icon at bottom left */}
         <div className={cn("w-6 h-6 flex items-center justify-center", config.iconColor)}>
           <config.icon size={14} />
+        </div>
+        
+        {/* Song Thumbnail in the center */}
+        <div className="flex-1 flex justify-center">
+          <div className="w-12 h-12 overflow-hidden">
+            <img 
+              src={thumbnailUrl} 
+              alt={`${songTitle} thumbnail`} 
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
         
         {/* Timestamp positioned at bottom right */}
