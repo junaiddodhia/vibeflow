@@ -172,11 +172,11 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
     switch (type) {
       case 'request':
         return (
-          <div className="grid grid-cols-10 gap-2 mt-4">
+          <div className="grid grid-cols-3 gap-2 mt-4">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleApprove}
             >
               <Check size={16} className="text-spotify-green" />
@@ -184,7 +184,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleReject}
             >
               <X size={16} className="text-destructive" />
@@ -192,7 +192,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="col-span-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center py-2.5"
               onClick={handleCommentOpen}
             >
               <MessageCircle size={16} />
