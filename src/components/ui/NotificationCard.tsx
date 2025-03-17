@@ -56,7 +56,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   const config = getTypeConfig();
 
   return (
-    <div className="p-4 black-card border-0 mb-3 transition-all duration-200 hover:bg-[#111]">
+    <div className="p-4 bg-[#111] border-0 mb-3 transition-all duration-200 hover:bg-[#181818]">
       <div className="flex items-start gap-3">
         {/* Left Column: Avatar and Action Icon */}
         <div className="flex flex-col items-center space-y-2">
