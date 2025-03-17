@@ -176,20 +176,18 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
               onClick={handleApprove}
             >
               <Check size={16} className="text-spotify-green" />
-              <span className="ml-1">Approve</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="col-span-4 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
               onClick={handleReject}
             >
               <X size={16} className="text-destructive" />
-              <span className="ml-1">Reject</span>
             </Button>
             <Button 
               variant="ghost" 
@@ -207,19 +205,18 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
+              onClick={handleThankYou}
             >
               <ThumbsUp size={16} className="text-spotify-blue" />
-              <span className="ml-1">Thank You</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
-              <span className="ml-1">Dismiss</span>
             </Button>
           </div>
         );
@@ -229,20 +226,18 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
               onClick={handleAskWhy}
             >
               <FileQuestion size={16} className="text-spotify-blue" />
-              <span className="ml-1">Ask Why?</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
-              <span className="ml-1">Dismiss</span>
             </Button>
           </div>
         );
@@ -252,29 +247,26 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
               onClick={handleReact}
             >
               <Heart size={16} className="text-spotify-green" />
-              <span className="ml-1">React</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
               onClick={handleReplyOpen}
             >
               <Reply size={16} className="text-spotify-blue" />
-              <span className="ml-1">Reply</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
+              className="bg-[#202020] hover:bg-[#252525] text-spotify-white/70 justify-center"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
-              <span className="ml-1">Dismiss</span>
             </Button>
           </div>
         );
