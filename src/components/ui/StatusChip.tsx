@@ -15,19 +15,19 @@ const StatusChip: React.FC<StatusChipProps> = ({ status }) => {
         return {
           label: 'Approved',
           icon: Check,
-          className: 'bg-spotify-green/20 text-spotify-green border-spotify-green/30'
+          className: 'text-spotify-green border-spotify-green'
         };
       case 'pending':
         return {
           label: 'Pending',
           icon: Clock,
-          className: 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+          className: 'text-blue-400 border-blue-500'
         };
       case 'rejected':
         return {
           label: 'Rejected',
           icon: X,
-          className: 'bg-red-500/20 text-red-400 border-red-500/30'
+          className: 'text-red-400 border-red-500'
         };
     }
   };
