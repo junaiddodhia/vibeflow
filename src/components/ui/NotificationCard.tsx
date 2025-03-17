@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { MessageCircle, Plus, Check, X, User, ArrowRight, Music, ListMusic, Heart, Reply, ThumbsUp, FileQuestion } from 'lucide-react';
+import { MessageCircle, Plus, Check, X, Music, ListMusic, Heart, Reply, ThumbsUp, FileQuestion } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from './button';
 import { Dialog, DialogContent } from './dialog';
@@ -36,7 +35,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   username,
   time,
   message,
-  thumbnailUrl = 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=300&h=300', // Default thumbnail
+  thumbnailUrl,
   onApprove,
   onReject,
   onComment,
@@ -90,6 +89,7 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   };
 
   const config = getTypeConfig();
+  const Icon = config.icon;
 
   const handleApprove = () => {
     toast({
@@ -172,45 +172,48 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
     switch (type) {
       case 'request':
         return (
-          <div className="flex justify-between mt-3 ml-9">
+          <div className="flex justify-between mt-3">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleCommentOpen}
             >
               <MessageCircle size={16} />
+              <span className="ml-1">Comment</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleReject}
             >
               <X size={16} className="text-destructive" />
+              <span className="ml-1">Reject</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleApprove}
             >
               <Check size={16} className="text-spotify-green" />
+              <span className="ml-1">Approve</span>
             </Button>
           </div>
         );
       case 'approval':
         return (
-          <div className="flex justify-between mt-3 ml-9">
+          <div className="flex justify-between mt-3">
             <Popover>
               <PopoverTrigger asChild>
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+                  className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
                 >
                   <ThumbsUp size={16} className="text-spotify-blue" />
-                  <span className="ml-2">Thank You</span>
+                  <span className="ml-1">Thank You</span>
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0 bg-[#202020] border-0">
@@ -220,14 +223,14 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
                     <Button 
                       size="sm" 
                       variant="ghost"
-                      className="bg-[#303030] hover:bg-[#404040] text-white/70 rounded-0"
+                      className="bg-[#303030] hover:bg-[#404040] text-white/70"
                       onClick={() => handleDismiss()}
                     >
                       Cancel
                     </Button>
                     <Button 
                       size="sm"
-                      className="bg-spotify-green hover:bg-spotify-green/80 text-white rounded-0"
+                      className="bg-spotify-green hover:bg-spotify-green/80 text-white"
                       onClick={() => {
                         handleThankYou();
                         handleDismiss();
@@ -242,66 +245,66 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
-              <span className="ml-2">Dismiss</span>
+              <span className="ml-1">Dismiss</span>
             </Button>
           </div>
         );
       case 'rejection':
         return (
-          <div className="flex justify-between mt-3 ml-9">
+          <div className="flex justify-between mt-3">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleAskWhy}
             >
               <FileQuestion size={16} className="text-spotify-blue" />
-              <span className="ml-2">Ask Why?</span>
+              <span className="ml-1">Ask Why?</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+              className="flex-1 ml-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
-              <span className="ml-2">Dismiss</span>
+              <span className="ml-1">Dismiss</span>
             </Button>
           </div>
         );
       case 'comment':
         return (
-          <div className="flex justify-between mt-3 ml-9">
+          <div className="flex justify-between mt-3">
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleReact}
             >
               <Heart size={16} className="text-spotify-green" />
-              <span className="ml-2">React</span>
+              <span className="ml-1">React</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+              className="flex-1 mx-2 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleReplyOpen}
             >
               <Reply size={16} className="text-spotify-blue" />
-              <span className="ml-2">Reply</span>
+              <span className="ml-1">Reply</span>
             </Button>
             <Button 
               variant="ghost" 
               size="sm" 
-              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70 rounded-0"
+              className="flex-1 bg-[#202020] hover:bg-[#252525] text-spotify-white/70"
               onClick={handleDismiss}
             >
               <Check size={16} className="text-spotify-green" />
-              <span className="ml-2">Dismiss</span>
+              <span className="ml-1">Dismiss</span>
             </Button>
           </div>
         );
@@ -309,35 +312,32 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
   };
 
   return (
-    <div className="p-4 bg-[#111] border-0 mb-3 transition-all duration-200 hover:bg-[#181818] rounded-0">
-      {/* Notification Title */}
+    <div className="p-4 bg-[#111] border-0 mb-3 transition-all duration-200 hover:bg-[#181818]">
       <div className="flex items-start gap-3">
-        <div className="flex flex-col items-center">
-          <div className="w-6 h-6 bg-[#0F0F0F] flex items-center justify-center rounded-0">
-            <User size={14} className="text-white/70" />
-          </div>
+        <div 
+          className={cn("p-2 rounded-full", config.bgColor)}
+        >
+          <Icon size={14} className={config.iconColor} />
         </div>
         
         <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium text-white">
+          <p className="text-sm font-medium text-white truncate">
             {config.emoji} {config.title}
           </p>
         </div>
       </div>
       
-      {/* Song and Playlist info with icons */}
       <div className="flex items-center mt-2 ml-9 text-xs text-spotify-white/70">
         <Music size={14} className="mr-1 text-spotify-white/50" />
         <span className="font-medium">{songTitle}</span>
-        <ArrowRight size={12} className="mx-1 text-spotify-white/50" />
+        <span className="mx-1">→</span>
         <ListMusic size={14} className="mr-1 text-spotify-white/50" />
         <span className="font-medium">{playlistName}</span>
       </div>
       
-      {/* Show message for comment notifications */}
       {type === 'comment' && message && (
         <div className="mt-2 ml-9">
-          <Card className="bg-[#202020] border-0 p-3 rounded-0">
+          <Card className="bg-[#202020] border-0 p-3">
             <p className="text-xs text-white/90">
               <span className="text-white/50">📝</span> {message}
             </p>
@@ -345,19 +345,17 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         </div>
       )}
       
-      {/* Action buttons row */}
       {renderActionButtons()}
 
-      {/* Comment Dialog */}
       <Dialog open={isCommentDialogOpen} onOpenChange={setIsCommentDialogOpen}>
-        <DialogContent className="bg-[#202020] border-0 rounded-0 max-w-[320px] p-4">
+        <DialogContent className="bg-[#202020] border-0 max-w-[320px] p-4">
           <h3 className="text-sm font-semibold text-white mb-2">Add a Comment</h3>
           <Textarea 
             value={commentText}
             onChange={(e) => setCommentText(e.target.value)}
             placeholder="Enter your comment..."
             maxLength={50}
-            className="bg-[#333] border-0 resize-none rounded-0 text-sm text-white placeholder:text-white/50 focus-visible:ring-0 min-h-[60px]"
+            className="bg-[#333] border-0 resize-none text-sm text-white placeholder:text-white/50 focus-visible:ring-0 min-h-[60px]"
           />
           <div className="text-[10px] text-white/50 text-right mt-1">
             {commentText.length}/50
@@ -366,14 +364,14 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="outline" 
               size="sm"
-              className="rounded-0 bg-transparent border-white/20 text-white/70 hover:bg-white/10"
+              className="bg-transparent border-white/20 text-white/70 hover:bg-white/10"
               onClick={() => setIsCommentDialogOpen(false)}
             >
               Cancel
             </Button>
             <Button 
               size="sm"
-              className="rounded-0 bg-spotify-green hover:bg-spotify-green-dark"
+              className="bg-spotify-green hover:bg-spotify-green-dark"
               onClick={handleCommentSubmit}
             >
               Submit
@@ -382,16 +380,15 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
         </DialogContent>
       </Dialog>
 
-      {/* Reply Dialog */}
       <Dialog open={isReplyDialogOpen} onOpenChange={setIsReplyDialogOpen}>
-        <DialogContent className="bg-[#202020] border-0 rounded-0 max-w-[320px] p-4">
+        <DialogContent className="bg-[#202020] border-0 max-w-[320px] p-4">
           <h3 className="text-sm font-semibold text-white mb-2">Reply to Comment</h3>
           <Textarea 
             value={replyText}
             onChange={(e) => setReplyText(e.target.value)}
             placeholder="Enter your reply..."
             maxLength={50}
-            className="bg-[#333] border-0 resize-none rounded-0 text-sm text-white placeholder:text-white/50 focus-visible:ring-0 min-h-[60px]"
+            className="bg-[#333] border-0 resize-none text-sm text-white placeholder:text-white/50 focus-visible:ring-0 min-h-[60px]"
           />
           <div className="text-[10px] text-white/50 text-right mt-1">
             {replyText.length}/50
@@ -400,14 +397,14 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
             <Button 
               variant="outline" 
               size="sm"
-              className="rounded-0 bg-transparent border-white/20 text-white/70 hover:bg-white/10"
+              className="bg-transparent border-white/20 text-white/70 hover:bg-white/10"
               onClick={() => setIsReplyDialogOpen(false)}
             >
               Cancel
             </Button>
             <Button 
               size="sm"
-              className="rounded-0 bg-spotify-green hover:bg-spotify-green-dark"
+              className="bg-spotify-green hover:bg-spotify-green-dark"
               onClick={handleReplySubmit}
             >
               Submit
