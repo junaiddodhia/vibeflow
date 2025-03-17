@@ -215,24 +215,24 @@ const Playlist: React.FC = () => {
                     <div className="flex justify-end gap-2 mt-3">
                       <button
                         onClick={() => handleComment(request.id)}
-                        className="p-2 rounded-full bg-[#333333] hover:bg-[#444444] transition-colors flex items-center justify-center"
+                        className="text-[#0EA5E9]"
                         aria-label="Add comment"
                       >
-                        <MessageCircle size={20} className="text-[#1DB954]" />
+                        <MessageCircle size={20} />
                       </button>
                       <button
                         onClick={() => handleReject(request.id)}
-                        className="p-2 rounded-full bg-red-500/10 hover:bg-red-500/20 transition-colors flex items-center justify-center"
+                        className="text-red-500"
                         aria-label="Reject song"
                       >
-                        <X size={20} className="text-red-400" />
+                        <X size={20} />
                       </button>
                       <button
                         onClick={() => handleApprove(request.id)}
-                        className="p-2 rounded-full bg-[#1DB954]/10 hover:bg-[#1DB954]/20 transition-colors flex items-center justify-center"
+                        className="text-[#1DB954]"
                         aria-label="Approve song"
                       >
-                        <Check size={20} className="text-[#1DB954]" />
+                        <Check size={20} />
                       </button>
                     </div>
                   </div>
@@ -326,3 +326,4 @@ const Playlist: React.FC = () => {
 };
 
 export default Playlist;
+
