@@ -20,7 +20,7 @@ const PlaylistCard: React.FC<PlaylistCardProps> = ({
 }) => {
   return (
     <Link to={`/playlist/${id}`} className="block">
-      <div className="bg-[#222222] hover:bg-[#2a2a2a] border border-[#333333] p-4 rounded-0 transition-all duration-200 mb-1 animate-fade-in">
+      <div className="p-4 bg-[#111] border-0 mb-3 transition-all duration-200 hover:bg-[#181818] rounded-0">
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 relative rounded-0 overflow-hidden shadow-lg flex-shrink-0 md:w-16 md:h-16 lg:w-18 lg:h-18">
             <img
