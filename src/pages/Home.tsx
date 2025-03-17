@@ -1,10 +1,11 @@
-import React from 'react';
-import { Plus, Bell } from 'lucide-react';
+import React, { useState } from 'react';
+import { Plus, Bell, Check, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PageContainer from '../components/layout/PageContainer';
 import PlaylistCard from '../components/ui/PlaylistCard';
 import NotificationCard from '../components/ui/NotificationCard';
 import SearchBar from '../components/ui/SearchBar';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 
 // Mock data - more realistic playlists
 const recentPlaylists = [{
@@ -57,11 +58,22 @@ const recentActivity = [{
   message: 'Perfect for the playlist vibe!',
   thumbnailUrl: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&q=80&w=300&h=300'
 }];
+
 const Home: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'all' | 'approved' | 'rejected'>('all');
+  
   const handleSearch = (query: string) => {
     console.log('Searching for:', query);
     // Implement search functionality
   };
+
+  const filteredActivity = recentActivity.filter(activity => {
+    if (activeTab === 'all') return true;
+    if (activeTab === 'approved') return activity.type === 'approval';
+    if (activeTab === 'rejected') return activity.type === 'rejection';
+    return true;
+  });
+  
   return <PageContainer>
       <div className="pt-8">
         <div className="flex justify-between items-center mb-6">
@@ -92,10 +104,27 @@ const Home: React.FC = () => {
         </div>
 
         <div>
-          <h2 className="text-lg font-semibold text-white mb-4">Requests</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold text-white">Requests</h2>
+            <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'all' | 'approved' | 'rejected')} className="w-auto">
+              <TabsList className="bg-[#282828] h-8">
+                <TabsTrigger value="all" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black">
+                  All
+                </TabsTrigger>
+                <TabsTrigger value="approved" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1">
+                  <Check size={12} />
+                  Approved
+                </TabsTrigger>
+                <TabsTrigger value="rejected" className="text-xs h-7 px-3 data-[state=active]:bg-[#1DB954] data-[state=active]:text-black flex items-center gap-1">
+                  <X size={12} />
+                  Rejected
+                </TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
           
           <div className="space-y-3">
-            {recentActivity.map((activity, index) => <NotificationCard key={index} type={activity.type} playlistName={activity.playlistName} songTitle={activity.songTitle} username={activity.username} time={activity.time} message={activity.message} thumbnailUrl={activity.thumbnailUrl} />)}
+            {filteredActivity.map((activity, index) => <NotificationCard key={index} type={activity.type} playlistName={activity.playlistName} songTitle={activity.songTitle} username={activity.username} time={activity.time} message={activity.message} thumbnailUrl={activity.thumbnailUrl} />)}
           </div>
         </div>
       </div>
