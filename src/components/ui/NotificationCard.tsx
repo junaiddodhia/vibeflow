@@ -52,31 +52,36 @@ const NotificationCard: React.FC<NotificationCardProps> = ({
 
   return (
     <div className="p-3 bg-[#222222] hover:bg-[#2a2a2a] border border-[#333333] rounded-md mb-3 animate-fade-in transition-all duration-200">
-      <div className="flex items-start">
-        <div className="w-10 h-10 min-w-10 rounded-md overflow-hidden mr-3">
+      <div className="flex items-start justify-between">
+        <div className="flex items-start">
+          {/* User Profile Icon */}
+          <div className="w-8 h-8 rounded-full bg-[#333333] flex items-center justify-center mr-3 text-[#aaaaaa]">
+            <config.icon size={16} />
+          </div>
+          
+          {/* Content */}
+          <div className="flex-1">
+            <p className="text-sm font-medium text-white">{config.title}</p>
+            <p className="text-xs text-[#b3b3b3] mt-1">
+              {songTitle} • {playlistName}
+            </p>
+            {message && (
+              <p className="text-xs text-[#b3b3b3] mt-2 p-2 bg-[#2a2a2a] rounded-md border border-[#333333]">
+                "{message}"
+              </p>
+            )}
+            <p className="text-xs text-[#777777] mt-2">{time}</p>
+          </div>
+        </div>
+        
+        {/* Song Thumbnail (Right Side) */}
+        <div className="w-10 h-10 min-w-10 rounded-md overflow-hidden ml-3">
           <img 
             src={thumbnailUrl} 
             alt={`${songTitle} thumbnail`} 
             className="w-full h-full object-cover"
             loading="lazy"
           />
-        </div>
-        <div className="flex-1">
-          <div className="flex items-center">
-            <div className="mr-2 text-[#aaaaaa]">
-              <config.icon size={16} />
-            </div>
-            <p className="text-sm font-medium text-white">{config.title}</p>
-          </div>
-          <p className="text-xs text-[#b3b3b3] mt-1">
-            {songTitle} • {playlistName}
-          </p>
-          {message && (
-            <p className="text-xs text-[#b3b3b3] mt-2 p-2 bg-[#2a2a2a] rounded-md border border-[#333333]">
-              "{message}"
-            </p>
-          )}
-          <p className="text-xs text-[#777777] mt-2">{time}</p>
         </div>
       </div>
     </div>
